@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trial Desk — ROOTS BJJ</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Big+Shoulders+Display:wght@700;800&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body class="crm">
+
+<header class="crm-top">
+  <div class="crm-top__brand">
+    <img src="assets/logo-mark.png" alt="ROOTS BJJ">
+    <div>
+      <h1>Trial Desk</h1>
+      <p id="crmToday">—</p>
+    </div>
+  </div>
+  <div class="crm-top__right">
+    <label class="crm-who">
+      <span>I&rsquo;m coaching as</span>
+      <select id="coachPick"></select>
+    </label>
+    <button class="btn btn--small btn--ghost" id="refreshBtn">Refresh</button>
+  </div>
+</header>
+
+<!-- ===== KPI STRIP ===== -->
+<section class="crm-kpis" id="kpis"></section>
+
+<!-- ===== NEEDS ACTION ===== -->
+<section class="crm-block">
+  <div class="crm-block__head">
+    <h2>Needs a call</h2>
+    <span class="crm-hint">New leads not contacted yet &mdash; oldest first. Call within 2 hours converts best.</span>
+  </div>
+  <div class="crm-list" id="listNew"></div>
+</section>
+
+<!-- ===== BOOKED / TODAY ===== -->
+<section class="crm-block">
+  <div class="crm-block__head">
+    <h2>Booked on the mat</h2>
+    <span class="crm-hint">Confirmed trials, by class date. Mark them off as they show up.</span>
+  </div>
+  <div class="crm-list" id="listBooked"></div>
+</section>
+
+<!-- ===== DONE ===== -->
+<section class="crm-block">
+  <div class="crm-block__head">
+    <h2>Recently closed</h2>
+    <span class="crm-hint">Attended, joined or lost &mdash; last 14 days.</span>
+  </div>
+  <div class="crm-list crm-list--quiet" id="listDone"></div>
+</section>
+
+<!-- ===== LEAD DRAWER ===== -->
+<div class="crm-drawer" id="drawer" hidden>
+  <div class="crm-drawer__panel" role="dialog" aria-modal="true" aria-labelledby="drawerName">
+    <button class="crm-drawer__close" id="drawerClose" aria-label="Close">&times;</button>
+    <span class="crm-badge" id="drawerProgram"></span>
+    <h3 id="drawerName"></h3>
+    <p class="crm-drawer__meta" id="drawerMeta"></p>
+
+    <div class="crm-drawer__actions" id="drawerActions"></div>
+
+    <h4>Move to</h4>
+    <div class="crm-status" id="drawerStatus"></div>
+
+    <h4>Assign coach</h4>
+    <select id="drawerCoach"></select>
+
+    <h4>Class date &amp; time</h4>
+    <div class="crm-slot">
+      <input type="date" id="drawerDate">
+      <select id="drawerTime"></select>
+    </div>
+
+    <h4>Notes</h4>
+    <textarea id="drawerNotes" rows="3" placeholder="Anything the coach should know — injuries, kid's age, who referred them…"></textarea>
+
+    <button class="btn btn--gold crm-drawer__save" id="drawerSave">Save</button>
+  </div>
+</div>
+
+<footer class="crm-foot">
+  <span id="crmSource">—</span>
+  <span>ROOTS BJJ &middot; Trial Desk</span>
+</footer>
+
+<script src="crm.js"></script>
+</body>
+</html>

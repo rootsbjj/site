@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Trial Class — ROOTS BJJ Brookvale | Northern Beaches</title>
+<meta name="description" content="Book your free Brazilian Jiu-Jitsu class at ROOTS BJJ Brookvale. Australia's first Brazilian black belt academy, est. 2001. Kids, teens, adults & women's classes — no experience, no contract.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Big+Shoulders+Display:wght@700;800&family=Pirata+One&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body class="ld">
+
+<!-- ============ TOP BAR (no nav — one goal) ============ -->
+<header class="ld-top">
+  <img src="assets/logo-mark.png" alt="ROOTS Brazilian Jiu-Jitsu" class="ld-top__logo">
+  <a href="tel:1300590598" class="ld-top__call">
+    <span class="ld-top__call-label">Questions? Call</span>
+    <strong>1300 590 598</strong>
+  </a>
+</header>
+
+<!-- ============ HERO + FORM (everything above the fold) ============ -->
+<section class="ld-hero" id="book">
+  <div class="ld-hero__pitch">
+    <p class="ld-eyebrow reveal">Free trial &mdash; Brookvale, Northern Beaches</p>
+    <h1 class="ld-h1 reveal">Your first class<br><span>is free.</span></h1>
+    <p class="ld-sub reveal">Train real Brazilian Jiu-Jitsu at <strong>Australia&rsquo;s first Brazilian
+      black belt academy</strong> &mdash; est. 2001. Kids, teens, adults and women&rsquo;s classes,
+      six days a week.</p>
+    <ul class="ld-props">
+      <li class="reveal">No experience needed &mdash; everyone starts as a white belt</li>
+      <li class="reveal">No contract, no pressure &mdash; just try a class</li>
+      <li class="reveal">Coached under a 6th degree Brazilian black belt</li>
+    </ul>
+    <div class="ld-proofrow reveal">
+      <span class="ld-stars" aria-label="Five star rated">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <a href="https://share.google/QkVXt9Tm8a8Wcst5l" target="_blank" rel="noopener">Rated 5.0 on Google</a>
+      <span aria-hidden="true">&middot;</span>
+      <span>30 academies worldwide</span>
+    </div>
+  </div>
+
+  <div class="ld-card reveal" id="form">
+    <p class="ld-card__script">Claim your free class</p>
+    <h2 class="ld-card__title">Book in 20 seconds</h2>
+    <form id="ldForm" novalidate>
+      <fieldset class="ld-chips">
+        <legend>1 &middot; Who&rsquo;s training?</legend>
+        <label><input type="radio" name="program" value="ninjas"><span>Little Ninjas <em>3&ndash;5</em></span></label>
+        <label><input type="radio" name="program" value="kids"><span>Kids <em>6&ndash;12</em></span></label>
+        <label><input type="radio" name="program" value="teens"><span>Teens <em>12&ndash;17</em></span></label>
+        <label><input type="radio" name="program" value="adults" checked><span>Adults <em>16+</em></span></label>
+      </fieldset>
+
+      <fieldset class="ld-slots" id="ldSlots">
+        <legend>2 &middot; Pick your class</legend>
+        <div class="ld-slots__days" id="ldDays" role="tablist" aria-label="Available days"></div>
+        <div class="ld-slots__list" id="ldTimes"></div>
+        <p class="ld-slots__hint" id="ldHint" hidden></p>
+        <input type="hidden" name="session" id="ld-session" required>
+      </fieldset>
+
+      <fieldset class="ld-who">
+        <legend>3 &middot; Where do we send the confirmation?</legend>
+        <div class="ld-field">
+          <label class="sr-only" for="ld-name">Your name</label>
+          <input id="ld-name" name="name" type="text" placeholder="Your name" required autocomplete="name">
+        </div>
+        <div class="ld-field">
+          <label class="sr-only" for="ld-phone">Mobile number</label>
+          <input id="ld-phone" name="phone" type="tel" placeholder="Mobile number" required autocomplete="tel" inputmode="tel">
+        </div>
+      </fieldset>
+
+      <button type="submit" class="btn btn--gold ld-card__submit">Confirm my free class</button>
+      <p class="ld-card__micro" id="ldMicro">Free trial, no contract. We&rsquo;ll text you a confirmation
+        &mdash; arrive 10 minutes early.</p>
+    </form>
+    <div class="ld-card__ok" id="ldOk" hidden>
+      <p class="ld-card__script">Osu! You&rsquo;re booked.</p>
+      <div class="ld-ticket" id="ldTicket"></div>
+      <h3>What happens next</h3>
+      <ol>
+        <li><b>We text you a confirmation</b> to the number you left.</li>
+        <li><b>Arrive 10 minutes early</b> in comfortable clothes with a water bottle.</li>
+        <li><b>Step on the mat.</b> Your coach takes it from there.</li>
+      </ol>
+      <div class="ld-ok__acts">
+        <a class="btn btn--small btn--ghost" id="ldIcs" download="roots-trial.ics">Add to calendar</a>
+        <a class="btn btn--small btn--ghost" href="tel:1300590598">Call us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST STRIP ============ -->
+<div class="ld-strip" aria-hidden="true">
+  <span>Est. 2001</span><i>&#10022;</i>
+  <span>Australia&rsquo;s first Brazilian black belt academy</span><i>&#10022;</i>
+  <span>Respect &middot; Honour &middot; Loyalty &middot; Family</span><i>&#10022;</i>
+  <span>Six days a week &middot; Mon&ndash;Sat</span>
+</div>
+
+<!-- ============ WHAT HAPPENS NEXT ============ -->
+<section class="ld-section">
+  <p class="section-eyebrow reveal">No awkward first day</p>
+  <h2 class="section-title reveal">From this form<br>to the mat.</h2>
+  <ol class="steps">
+    <li class="step reveal">
+      <span class="step__num">01</span>
+      <div>
+        <h3>Book in 20 seconds</h3>
+        <p>Pick a program, leave your name and mobile. That&rsquo;s the whole form &mdash; no payment details.</p>
+      </div>
+    </li>
+    <li class="step reveal">
+      <span class="step__num">02</span>
+      <div>
+        <h3>We confirm your class</h3>
+        <p>A real coach texts you the best beginner-friendly time for your program &mdash; classes run
+          Monday to Saturday.</p>
+      </div>
+    </li>
+    <li class="step reveal">
+      <span class="step__num">03</span>
+      <div>
+        <h3>Walk in like family</h3>
+        <p>Comfortable clothes and a water bottle is all you need. Your coach and the whole mat
+          will look after the rest.</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<!-- ============ PROGRAMS ============ -->
+<section class="ld-section ld-section--tint">
+  <p class="section-eyebrow reveal">Pick your mat</p>
+  <h2 class="section-title reveal">A class for every<br>member of the family.</h2>
+  <div class="ld-progs">
+    <article class="ld-prog reveal" data-tilt>
+      <img src="assets/photos/kids-class.jpg" alt="Smiling kids in gis at ROOTS Brookvale" loading="lazy">
+      <div>
+        <h3>Kids &amp; Little Ninjas <small>ages 3&ndash;12</small></h3>
+        <p>Confidence, discipline, focus and friendship &mdash; in a structured, safe and seriously fun class.</p>
+        <button class="btn btn--small btn--gold" data-book="kids">Book kids free class</button>
+      </div>
+    </article>
+    <article class="ld-prog reveal" data-tilt>
+      <img src="assets/photos/adults-training.jpg" alt="Adults training BJJ at ROOTS" loading="lazy">
+      <div>
+        <h3>Adults <small>beginners welcome</small></h3>
+        <p>Fitness, real self-defence and a team that holds you accountable. No experience needed
+          &mdash; just step on the mats.</p>
+        <button class="btn btn--small btn--gold" data-book="adults">Book adults free class</button>
+      </div>
+    </article>
+    <article class="ld-prog reveal" data-tilt>
+      <img src="assets/photos/phillipa.jpg" alt="Professor Paulo awarding Phillipa her black belt" loading="lazy">
+      <div>
+        <h3>Women&rsquo;s <small>women train in every adult class</small></h3>
+        <p>Get fit, build confidence and learn self-defence that actually works &mdash; in a supportive,
+          judgement-free room, alongside a strong team of women.</p>
+        <button class="btn btn--small btn--gold" data-book="adults">Book a free class</button>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ COACH CRED ============ -->
+<section class="ld-section ld-coach">
+  <div class="ld-coach__photo reveal">
+    <img src="assets/instructors/paulo.png" alt="Professor Paulo Guimaraes, 6th degree Brazilian black belt" loading="lazy">
+  </div>
+  <div>
+    <p class="section-eyebrow reveal">Your head coach</p>
+    <h2 class="section-title reveal">Learn from Australia&rsquo;s highest-ranked Brazilian black belt.</h2>
+    <p class="ld-coach__bio reveal"><strong>Professor Paulo Guimaraes</strong> &mdash; 6th degree black belt,
+      World Cup champion, and the first Brazilian black belt to open a BJJ academy in Australia. His lineage
+      runs straight back through Jorge Pereira to <strong>Rickson Gracie</strong> &mdash; and it shows in
+      every class.</p>
+    <p class="ld-coach__line reveal">Rickson Gracie &rarr; Jorge Pereira &rarr; Paulo Guimaraes &rarr; <b>you</b></p>
+  </div>
+</section>
+
+<!-- ============ SOCIAL PROOF ============ -->
+<section class="ld-section ld-section--tint">
+  <p class="section-eyebrow reveal">From our families</p>
+  <h2 class="section-title reveal">Don&rsquo;t take our word for it.</h2>
+  <div class="ld-quotes">
+    <blockquote class="ld-quote reveal">
+      <p>&ldquo;I have no words to express the support and attention that Paulo has with all the children.&rdquo;</p>
+      <cite>&mdash; Natalia, ROOTS parent</cite>
+    </blockquote>
+    <blockquote class="ld-quote reveal">
+      <p>&ldquo;Such a great experience being part of this gym. Wish I&rsquo;d started my BJJ journey earlier!&rdquo;</p>
+      <cite>&mdash; Roderick, member</cite>
+    </blockquote>
+    <blockquote class="ld-quote reveal">
+      <p>&ldquo;Paulo and the team are welcoming, friendly &amp; professional. They teach and lead by example.&rdquo;</p>
+      <cite>&mdash; Matt, member</cite>
+    </blockquote>
+  </div>
+  <p class="voices__more reveal"><a href="https://share.google/QkVXt9Tm8a8Wcst5l" target="_blank" rel="noopener">Read all our five-star reviews on Google &rarr;</a></p>
+</section>
+
+<!-- ============ OBJECTIONS ============ -->
+<section class="ld-section">
+  <p class="section-eyebrow reveal">Before you ask</p>
+  <h2 class="section-title reveal">Totally normal<br>to be nervous.</h2>
+  <div class="faq" style="padding:1.5rem 0 0; max-width:none">
+    <details class="reveal" open>
+      <summary>I&rsquo;ve never done any martial arts. Is that OK?</summary>
+      <p>That&rsquo;s exactly who this class is for. Every black belt in our academy started with zero
+        experience &mdash; classes are built for complete beginners.</p>
+    </details>
+    <details class="reveal">
+      <summary>Am I fit enough to start?</summary>
+      <p>Yes. You go at your own pace from day one &mdash; jiu-jitsu is how you <em>get</em> fit,
+        not a fitness test to enter.</p>
+    </details>
+    <details class="reveal">
+      <summary>What do I need to bring?</summary>
+      <p>Comfortable clothes and a water bottle. That&rsquo;s it &mdash; no gi or equipment needed
+        for your first class.</p>
+    </details>
+    <details class="reveal">
+      <summary>Is there a lock-in contract?</summary>
+      <p>The trial is completely free with no obligation. If you love it &mdash; and you will &mdash;
+        we&rsquo;ll talk memberships after.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ============ LOCATION + FINAL CTA ============ -->
+<section class="ld-section ld-section--tint ld-final">
+  <div class="ld-final__loc reveal">
+    <p class="section-eyebrow">Find us</p>
+    <h2 class="section-title">Brookvale HQ</h2>
+    <p class="ld-final__addr">2/16 Dale Street, Brookvale NSW 2100<br>
+      Classes Mon&ndash;Sat &middot; Saturday mornings from 9:30am &middot; off-street parking</p>
+    <div class="ld-final__btns">
+      <a class="btn btn--small btn--ghost" href="https://maps.google.com/?q=2/16+Dale+Street+Brookvale+NSW+2100" target="_blank" rel="noopener">Get directions</a>
+      <a class="btn btn--small btn--ghost" href="tel:1300590598">Call 1300 590 598</a>
+    </div>
+  </div>
+  <div class="ld-final__cta reveal">
+    <p class="trial__script">No experience. No contract. No judgement.</p>
+    <h2 class="ld-final__big">Ready when<br>you are.</h2>
+    <a href="#book" class="btn btn--gold" data-scrolltop>Book my free class</a>
+  </div>
+</section>
+
+<footer class="ld-foot">
+  <span>&copy; 2026 ROOTS Brazilian Jiu-Jitsu &middot; ABN 16 595 381 228</span>
+  <span class="footer__values">Respect &middot; Honour &middot; Loyalty &middot; Family</span>
+</footer>
+
+<!-- ============ STICKY MOBILE CTA ============ -->
+<div class="ld-sticky" id="ldSticky">
+  <a href="tel:1300590598" class="ld-sticky__call" aria-label="Call ROOTS BJJ">&#9742;</a>
+  <a href="#book" class="btn btn--gold ld-sticky__book" data-scrolltop>Book my free class</a>
+</div>
+
+<script src="schedule.js"></script>
+<script src="booking.js"></script>
+<script src="landing.js"></script>
+</body>
+</html>

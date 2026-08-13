@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team Roots Worldwide — ROOTS Brazilian Jiu-Jitsu</title>
+<meta name="description" content="Every Team Roots BJJ academy in the world — Australia HQ in Sydney, 27 academies across South Korea, and Glory MMA in Inner Mongolia (China) and Mongolia. One lineage, one standard.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Big+Shoulders+Display:wght@500;700;800&family=Pirata+One&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body class="page-academies">
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a href="index.html" class="nav__logo"><img src="assets/logo-mark.png" alt="ROOTS Brazilian Jiu-Jitsu">
+  </a>
+  <nav class="nav__links" id="navLinks" aria-label="Main">
+    <div class="nav__drop">
+      <button class="nav__droptrigger" aria-expanded="false" aria-haspopup="true">About</button>
+      <div class="nav__dropmenu">
+        <a href="history.html">BJJ History</a>
+        <a href="history-brazil.html">BJJ in Brazil</a>
+        <a href="lineage.html">Lineage</a>
+        <a href="grading.html">Grading System</a>
+        <a href="women.html">Women&rsquo;s BJJ</a>
+        <a href="faqs.html">FAQs</a>
+      </div>
+    </div>
+    <a href="index.html#programs">Programs</a>
+    <a href="instructors.html">Instructors</a>
+    <a href="academies.html" aria-current="page">Team Roots</a>
+    <a href="franchise.html">Franchise</a>
+  </nav>
+  <a href="index.html#trial" class="btn btn--gold nav__cta">Book a free trial</a>
+  <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- ============ WORLD HERO + MAP ============ -->
+<section class="world">
+  <div class="world__head">
+    <p class="section-eyebrow reveal">Team Roots BJJ</p>
+    <h1 class="world__title reveal">Roots grow<br><span>worldwide.</span></h1>
+    <p class="world__script reveal">One lineage. Every mat.</p>
+    <p class="world__sub reveal">From our headquarters on Sydney&rsquo;s Northern Beaches to 27 academies
+      across South Korea and Glory MMA on the Mongolia&ndash;China border &mdash; every Team Roots gym
+      trains the same real jiu-jitsu, under the same belt standard. Tap a marker to explore.</p>
+  </div>
+
+  <div class="world__mapwrap reveal" id="mapWrap" aria-label="World map of Team Roots academies">
+    <div class="world__map" id="worldMap"></div>
+    <div class="world__tip" id="mapTip" role="status" hidden></div>
+    <button class="world__reset btn btn--small btn--ghost" id="mapReset" hidden>&larr; World view</button>
+  </div>
+
+  <div class="world__chips">
+    <button class="chip is-active" data-region="au" id="chipAu">
+      <span class="chip__flag">AU</span> Australia <em>HQ &middot; 1 academy</em>
+    </button>
+    <button class="chip" data-region="kr" id="chipKr">
+      <span class="chip__flag">KR</span> South Korea <em>27 academies</em>
+    </button>
+    <button class="chip" data-region="mn" id="chipMn">
+      <span class="chip__flag">MN</span> Mongolia <em>Glory MMA &middot; 2 academies</em>
+    </button>
+  </div>
+  <p class="world__count reveal">3 countries &middot; 30 academies &middot; one family</p>
+</section>
+
+<!-- ============ AUSTRALIA ============ -->
+<section class="country" id="australia">
+  <div class="country__head">
+    <p class="section-eyebrow reveal">Australia</p>
+    <h2 class="section-title reveal">Where the roots<br>were planted.</h2>
+  </div>
+  <div class="acad__grid acad__grid--solo">
+    <article class="acad acad--hq reveal" data-tilt>
+      <span class="acad__tag">Headquarters</span>
+      <h3>Team Roots Australia HQ</h3>
+      <p class="acad__where">Brookvale &mdash; Sydney, NSW</p>
+      <ul class="acad__meta">
+        <li><span>Professor</span>Paulo Guimaraes &mdash; Black Belt 6th Degree</li>
+        <li><span>Address</span>2/16 Dale Street, Brookvale NSW 2100</li>
+        <li><span>Email</span><a href="mailto:info@rootsbjj.com.au">info@rootsbjj.com.au</a></li>
+        <li><span>Phone</span><a href="tel:1300590598">1300 590 598</a></li>
+      </ul>
+      <div class="acad__foot">
+        <a class="btn btn--small btn--gold" href="index.html#trial">Book a free trial</a>
+        <a class="btn btn--small btn--ghost" href="https://maps.google.com/?q=2/16+Dale+Street+Brookvale+NSW+2100" target="_blank" rel="noopener">Directions</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ KOREA ============ -->
+<section class="country country--line" id="korea">
+  <div class="country__head">
+    <p class="section-eyebrow reveal">South Korea</p>
+    <h2 class="section-title reveal">27 mats strong<br>across Korea.</h2>
+    <p class="section-sub reveal">Team Roots Korea carries the lineage from Incheon to Jeju Island &mdash;
+      led by black belts formed under the Roots standard.</p>
+  </div>
+
+  <h3 class="region-h reveal" id="incheon"><b>Incheon</b><em>20 academies</em></h3>
+  <div class="acad__grid">
+    <article class="acad acad--hq reveal" data-tilt>
+      <span class="acad__tag">Korea HQ</span>
+      <h3>Jakjeon</h3>
+      <p class="acad__where">Gyeyang-gu, Incheon</p>
+      <ul class="acad__meta">
+        <li><span>Instructor</span>Cho Jae-sub &middot; <a href="https://instagram.com/rootsbjjkorea" target="_blank" rel="noopener">@rootsbjjkorea</a></li>
+        <li><span>Phone</span><a href="tel:0325551339">032-555-1339</a></li>
+        <li><span>Address</span>3F, 81, Geyang-daero, Gyeyang-gu, Incheon</li>
+      </ul>
+    </article>
+
+    <article class="acad reveal" data-tilt>
+      <h3>Ganseok-dong</h3>
+      <p class="acad__where">Namdong-gu, Incheon</p>
+      <ul class="acad__meta">
+        <li><span>Instructor</span>Park Mun-soo &middot; <a href="https://instagram.com/teamroots_ganseok" target="_blank" rel="noopener">@teamroots_ganseok</a></li>
+        <li><span>Phone</span><a href="tel:0324337780">032-433-7780</a></li>
+        <li><span>Address</span>2F, 16, Seokchon-ro, Namdong-gu, Incheon</li>
+      </ul>
+    </article>
+
+    <article class="acad reveal" data-tilt>
+      <h3>Gajeong-dong</h3>
+      <p class="acad__where">Seo-gu, Incheon</p>
+      <ul class="acad__meta">
+        <li><span>Instructor</span>JT &middot; <a href="https://instagram.com/rootsjtsjiujitsu" target="_blank" rel="noopener">@rootsjtsjiujitsu</a></li>
+        <li><span>Phone</span><a href="tel:01097598915">010-9759-8915</a></li>
+        <li><span>Address</span>702, 7F, Daegeon Plaza, 472, Yeomgok-ro, Seo-gu, Incheon</li>
+      </ul>
+    </article>
+
+    <article class="acad reveal" data-tilt>
+      <h3>Jemulpo</h3>
+      <p class="acad__where">Michuhol-gu, Incheon</p>
+      <ul class="acad__meta">
+        <li><span>Instructor</span>Min Hyun-ki &middot; <a href="https://instagram.com/roots_hyueonki" target="_blank" rel="noopener">@roots_hyueonki</a></li>
+        <li><span>Phone</span><a href="tel:0328884867">032-888-4867</a></li>
+        <li><span>Address</span>5F, 158-25, Sukgol-ro 43beon-gil, Michuhol-gu, Incheon</li>
+      </ul>
+    </article>
+
+    <article class="acad reveal" data-tilt>
+      <h3>Guwol-dong <small>(Lira Gym)</small></h3>
+      <p class="acad__where">Namdong-gu, Incheon</p>
+      <ul class="acad__meta">
+        <li><span>Instructor</span>Jo Won-hee &middot; <a href="https://instagram.com/won.hee_bjj" target="_blank" rel="noopener">@won.hee_bjj</a></li>
+        <li><span>Phone</span><a href="tel:0324213893">032-421-3893</a></li>
+        <li><span>Address</span>2F, 3, Munhwa-ro 115beon-gil, Namdong-gu, Incheon</li>
+      </ul>
+    </article>
+
+    <article class="acad reveal" data-tilt>
+      <h3>Ongnyeon-dong <small>(Origin BJJ)</small></h3>
+      <p class="acad__where">Yeonsu-gu, Incheon</p>
+      <ul class="acad__meta">
+        <li><span>Instructor</span>Ahn Tae-young &middot; <a href="https://instagram.com/originbjjok" target="_blank" rel="noopener">@originbjjok</a></li>
+        <li><span>Phone</span><a href="tel:0328345504">032-834-5504</a></li>
+        <li><span>Address</span>4F, Yujin Medi Tower, 68, Dokbae-ro, Yeonsu-gu, Incheon</li>
+      </ul>
+    </article>
+
+    <article class="acad reveal" data-tilt>
+      <h3>Mansu-dong</h3>
+      <p class="acad__where">Namdong-gu, Incheon</p>
+      <ul class="acad__meta">
+        <li><span>Instructor</span>Jung Ji-hong &middot; <a href="https://instagram.com/roots_mansu" target="_blank" rel="noopener">@roots_mansu</a></li>
+        <li><span>Phone</span><a href="tel:0324712777">032-471-2777</a></li>
+        <li><span>Address</span>3F, Pillers Plaza, 60, Mansuseo-ro, Namdong-gu, Incheon</li>
+      </ul>
+    </article>
+
+    <article class="acad reveal" data-tilt>
+      <h3>Yonghyeon-dong</h3>
+      <p class="acad__where">Michuhol-gu, Incheon</p>
+      <ul class="acad__meta">
+        <li><span>Instructor</span>Kang Hee-deok &middot; <a href="https://instagram.com/teamroots_incheon_yonghyundong" target="_blank" rel="noopener">@teamroots_incheon_yonghyundong</a></li>
+        <li><span>Phone</span><a href="tel:0328845539">032-884-5539</a></li>
+        <li><span>Address</span>4F, Commercial Building, 56, Nakseomdong-ro, Michuhol-gu, Incheon</li>
+      </ul>
+    </article>
+
+    <article class="acad reveal" data-tilt>
+      <h3>Hagik-dong <small>(High Class BJJ)</small></h3>
+      <p class="acad__where">Michuhol-gu, Incheon</p>
+      <ul class="acad__meta">
+        <li><span>Instructor</span>Lee A-hyeop &middot; <a href="https://instagram.com/high_class.bjj" target="_blank" rel="noopener">@high_class.bjj</a></li>
+        <li><span>Phone</span><a href="tel:01034304369">010-3430-4369</a></li>
+        <li><span>Address</span>5F, 691-8, Hagik-dong, Michuhol-gu, Incheon</li>
+      </ul>
+    </article>
+
+    <article class="acad reveal" data-tilt>
+      <h3>Bupyeong</h3>
+      <p class="acad__where">Bupyeong-gu, Incheon</p>
+      <ul class="acad__meta">
+        <li><span>Instructor</span>Kim Eun-soo &middot; <a href="https://instagram.com/winnerseunsoo" target="_blank" rel="noopener">@winnerseunsoo</a></li>
+        <li><span>Phone</span><a href="tel:0325052153">032-505-2153</a></li>
+        <li><span>Address</span>B1, 47-1, Bupyeongmunhwa-ro, Bupyeong-gu, Incheon</li>
+      </ul>
+    </article>
+
+    <article class="acad reveal" data-tilt>
+      <h3>Seochang</h3>
+      <p class="acad__where">Namdong-gu, Incheon</p>
+      <ul class="acad__meta">
+        <li><span>Instructor</span>Woo Su-hwan &middot; <a href="https://instagram.com/teamroots_seochang_roots" target="_blank" rel="noopener">@teamroots_seochang_roots</a></li>
+        <li><span>Phone</span><a href="tel:0324651214">032-465-1214</a></li>
+        <li><span>Address</span>204, 2F, Sky Plus 2, 48, Seochangnamsunhwan-ro 215beon-gil, Namdong-gu, Incheon</li>
+      </ul>
+    </article>
+
+    <article class="acad reveal" data-tilt>
+      <h3>Imhak-dong</h3>
+      <p class="acad__where">Gyeyang-gu, Incheon</p>
+      <ul class="acad__meta">
+        <li><span>Instructor</span>Maseok-gwan</li>
+        <li><span>Phone</span><a href="tel:0325473208">032-547-3208</a></li>
+        <li><span>Address</span>2F, 897, Jangje-ro, Gyeyang-gu, Incheon</li>
+      </ul>
+    </article>
+
+    <article class="acad reveal" data-tilt>
+      <h3>Guwol-dong <small>(Raon Gym)</small></h3>
+      <p class="acad__where">Namdong-gu, Incheon</p>
+      <ul class="acad__meta">
+        <li><span>Instructor</span>Oh Gwang-yong &middot; <a href="https://instagram.com/roots_bjj_raongym" target="_blank" rel="noopener">@roots_bjj_raongym</a></li>
+        <li><span>Phone</span><a href="tel:01046906699">010-4690-6699</a></li>
+        <li><span>Address</span>5F, Community Plaza, 1519, Guwol-dong, Namdong-gu, Incheon</li>
+      </ul>
+    </article>
+
+    <article class="acad reveal" data-tilt>
+      <h3>Cheongna <small>(OPMT Academy)</small></h3>
+      <p class="acad__where">Seo-gu, Incheon</p>
+      <ul class="acad__meta">
+        <li><span>Instructor</span>Koo Bon-chul &middot; <a href="https://instagram.com/opmt_bjjacademy" target="_blank" rel="noopener">@opmt_bjjacademy</a></li>
+        <li><span>Address</span>1007, 10, Cheongnakanal-ro 288beon-gil, Seo-gu, Incheon</li>
+      </ul>
+    </article>
+
+    <article class="acad reveal" data-tilt>
+      <h3>Atomuv Gym</h3>
+      <p class="acad__where">Gyeyang-gu, Incheon</p>
+      <ul class="acad__meta">
+        <li><span>Instructor</span>Jung Do-han &middot; <a href="https://instagram.com/atomuv_gym" target="_blank" rel="noopener">@atomuv_gym</a></li>
+        <li><span>Phone</span><a href="tel:01029623008">010-2962-3008</a></li>
+        <li><span>Address</span>503, 5F, Daewoo Plaza, 210-3, Yongjong-dong, Gyeyang-gu, Incheon</li>
+      </ul>
+    </article>
+
+    <article class="acad reveal" data-tilt>
+      <h3>Gajwa-dong</h3>
+      <p class="acad__where">Seo-gu, Incheon</p>
+      <ul class="acad__meta">
+        <li><span>Instructor</span>Choi Dong-seop &middot; <a href="https://instagram.com/dong_seob_cho8" target="_blank" rel="noopener">@dong_seob_cho8</a></li>
+        <li><span>Phone</span><a href="tel:01050678587">010-5067-8587</a></li>
+        <li><span>Address</span>4F, Haengbok Clinic, 30, Sinjinmal-ro, Seo-gu, Incheon</li>
+      </ul>
+    </article>
+
+    <article class="acad reveal" data-tilt>
+      <h3>Incheon Wondang <small>(Grappling 24/7)</small></h3>
+      <p class="acad__where">Seo-gu, Incheon</p>
+      <ul class="acad__meta">
+        <li><span>Instructor</span>Han Jung-hoon &middot; <a href="https://instagram.com/wondangbjj" target="_blank" rel="noopener">@wondangbjj</a> / <a href="https://instagram.com/jh_base" target="_blank" rel="noopener">@jh_base</a></li>
+        <li><span>Phone</span><a href="tel:01032446008">010-3244-6008</a></li>
+        <li><span>Address</span>301, 3F, Boram Plaza, 860, Wondang-daero, Seo-gu, Incheon</li>
+      </ul>
+    </article>
+
+    <article class="acad reveal" data-tilt>
+      <h3>Yeongjong BJJ</h3>
+      <p class="acad__where">Jung-gu, Incheon</p>
+      <ul class="acad__meta">
+        <li><span>Phone</span><a href="tel:0327527890">032-752-7890</a> / <a href="tel:01063368731">010-6336-8731</a></li>
+        <li><span>Address</span>604, 6F, Hyundai Plaza, 7-4, Haneulbyeolbit-ro 65beon-gil, Jung-gu, Incheon</li>
+      </ul>
+    </article>
+
+    <article class="acad reveal" data-tilt>
+      <h3>Juan-dong <small>(Common Gym)</small></h3>
+      <p class="acad__where">Michuhol-gu, Incheon</p>
+      <ul class="acad__meta">
+        <li><span>Instructor</span>Kwon Oh-jin &middot; <a href="https://instagram.com/kommon_bjj" target="_blank" rel="noopener">@kommon_bjj</a></li>
+        <li><span>Phone</span><a href="tel:01034435006">010-3443-5006</a></li>
+        <li><span>Address</span>2F, 325, Inju-daero, Michuhol-gu, Incheon</li>
+      </ul>
+    </article>
+
+    <article class="acad reveal" data-tilt>
+      <h3>Sangok <small>(Cloud BJJ)</small></h3>
+      <p class="acad__where">Bupyeong-gu, Incheon</p>
+      <ul class="acad__meta">
+        <li><span>Instructor</span>Yoo Seung-won &middot; <a href="https://instagram.com/sangok_jiujitsu" target="_blank" rel="noopener">@sangok_jiujitsu</a></li>
+        <li><span>Phone</span><a href="tel:01044962889">010-4496-2889</a></li>
+        <li><span>Address</span>2F, 418, Gilju-ro, Bupyeong-gu, Incheon</li>
+      </ul>
+    </article>
+  </div>
+
+  <h3 class="region-h reveal" id="gyeonggi"><b>Gyeonggi-do</b><em>4 academies</em></h3>
+  <div class="acad__grid">
+    <article class="acad reveal" data-tilt>
+      <h3>Wondang</h3>
+      <p class="acad__where">Goyang-si, Gyeonggi-do</p>
+      <ul class="acad__meta">
+        <li><span>Instructor</span>Kim Yong-woo &middot; <a href="https://instagram.com/teamroots_wondang" target="_blank" rel="noopener">@teamroots_wondang</a></li>
+        <li><span>Phone</span><a href="tel:07082275553">070-8227-5553</a></li>
+        <li><span>Address</span>3F, 1383-2, Goyang-daero, Deogyang-gu, Goyang-si, Gyeonggi-do</li>
+      </ul>
+    </article>
+
+    <article class="acad reveal" data-tilt>
+      <h3>Bucheon Sang-dong</h3>
+      <p class="acad__where">Bucheon-si, Gyeonggi-do</p>
+      <ul class="acad__meta">
+        <li><span>Instructor</span>Han Hyun-woo</li>
+        <li><span>Phone</span><a href="tel:01043454113">010-4345-4113</a></li>
+        <li><span>Address</span>701-1, 7F, World Plaza, 35, Sohyang-ro, Wonmi-gu, Bucheon-si, Gyeonggi-do</li>
+      </ul>
+    </article>
+
+    <article class="acad reveal" data-tilt>
+      <h3>Pung-dong</h3>
+      <p class="acad__where">Goyang-si, Gyeonggi-do</p>
+      <ul class="acad__meta">
+        <li><span>Instructor</span>Jang Moon-young &middot; <a href="https://instagram.com/wtma_roots" target="_blank" rel="noopener">@wtma_roots</a></li>
+        <li><span>Phone</span><a href="tel:0319238997">031-923-8997</a></li>
+        <li><span>Address</span>3F, 48, Supsokmaeul-ro, Ilsandong-gu, Goyang-si, Gyeonggi-do</li>
+      </ul>
+    </article>
+
+    <article class="acad reveal" data-tilt>
+      <h3>Dongbaek BJJ</h3>
+      <p class="acad__where">Yongin-si, Gyeonggi-do</p>
+      <ul class="acad__meta">
+        <li><span>Instructor</span>Yoo Beom-sik</li>
+        <li><span>Phone</span><a href="tel:01041837051">010-4183-7051</a></li>
+        <li><span>Address</span>6F, 21-11, Dongbaek 5-ro, Giheung-gu, Yongin-si, Gyeonggi-do</li>
+      </ul>
+    </article>
+  </div>
+
+  <h3 class="region-h reveal" id="jeju"><b>Jeju Island</b><em>2 academies</em></h3>
+  <div class="acad__grid">
+    <article class="acad reveal" data-tilt>
+      <h3>Seogwipo</h3>
+      <p class="acad__where">Seogwipo-si, Jeju-do</p>
+      <ul class="acad__meta">
+        <li><span>Instructor</span>Wi Kyung-hwan &middot; <a href="https://instagram.com/rootsbjj_seogwipo" target="_blank" rel="noopener">@rootsbjj_seogwipo</a></li>
+        <li><span>Phone</span><a href="tel:01037338479">010-3733-8479</a></li>
+        <li><span>Address</span>2F, 8674, Iljudong-ro, Seogwipo-si, Jeju-do</li>
+      </ul>
+    </article>
+
+    <article class="acad reveal" data-tilt>
+      <h3>Jeju Nohyeong-dong</h3>
+      <p class="acad__where">Jeju-si, Jeju-do</p>
+      <ul class="acad__meta">
+        <li><span>Instructor</span>Lee Chang-hyun &middot; <a href="https://instagram.com/teamrootsbjj_jeju" target="_blank" rel="noopener">@teamrootsbjj_jeju</a></li>
+        <li><span>Phone</span><a href="tel:0647125262">064-712-5262</a></li>
+        <li><span>Address</span>2F, 19, Wonnohyeongnam 1-gil, Jeju-si, Jeju-do</li>
+      </ul>
+    </article>
+  </div>
+
+  <h3 class="region-h reveal" id="gangwon"><b>Gangwon-do</b><em>1 academy</em></h3>
+  <div class="acad__grid">
+    <article class="acad reveal" data-tilt>
+      <h3>Wonju</h3>
+      <p class="acad__where">Wonju-si, Gangwon-do</p>
+      <ul class="acad__meta">
+        <li><span>Instructor</span>Kim Jung-ho &middot; <a href="https://instagram.com/haesung_jk" target="_blank" rel="noopener">@haesung_jk</a></li>
+        <li><span>Phone</span><a href="tel:01036118901">010-3611-8901</a></li>
+        <li><span>Address</span>2F, Ban-gok I-Park Commercial Building, 201, Neulpum-ro, Wonju-si, Gangwon-do</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- ============ MONGOLIA & CHINA ============ -->
+<section class="country country--line" id="mongolia">
+  <div class="country__head">
+    <p class="section-eyebrow reveal">Mongolia &mdash; Inner Mongolia border</p>
+    <h2 class="section-title reveal">Roots on the<br>steppe border.</h2>
+    <p class="section-sub reveal">Glory MMA Jiu-Jitsu Academy trains Team Roots jiu-jitsu in the twin border
+      cities of Erlianhaote (Inner Mongolia, China) and Zamyn-Uud (Mongolia) &mdash; led by
+      Bilguun and Tsendayush.</p>
+  </div>
+
+  <div class="acad__grid">
+    <article class="acad acad--hq reveal" data-tilt>
+      <span class="acad__tag">Inner Mongolia</span>
+      <h3>Glory MMA <small>(Branch 1)</small></h3>
+      <p class="acad__where">Erlianhaote, Inner Mongolia</p>
+      <ul class="acad__meta">
+        <li><span>Instructors</span>Bilguun &amp; Tsendayush</li>
+        <li><span>Instagram</span><a href="https://instagram.com/glory_jiujitsu_academy" target="_blank" rel="noopener">@glory_jiujitsu_academy</a></li>
+        <li><span>Email</span><a href="mailto:tsendayush.bjj@gmail.com">tsendayush.bjj@gmail.com</a></li>
+      </ul>
+    </article>
+
+    <article class="acad acad--hq reveal" data-tilt>
+      <span class="acad__tag">Mongolia</span>
+      <h3>Glory MMA <small>(Branch 2)</small></h3>
+      <p class="acad__where">Zamyn-Uud, Mongolia</p>
+      <ul class="acad__meta">
+        <li><span>Instructors</span>Bilguun &amp; Tsendayush</li>
+        <li><span>Instagram</span><a href="https://instagram.com/tseegii3033" target="_blank" rel="noopener">@tseegii3033</a> / <a href="https://instagram.com/rentsenpurevbilguun" target="_blank" rel="noopener">@rentsenpurevbilguun</a></li>
+        <li><span>Email</span><a href="mailto:tsendayush.bjj@gmail.com">tsendayush.bjj@gmail.com</a></li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="worldcta">
+  <p class="trial__script reveal">Wherever you land, you have a mat.</p>
+  <h2 class="section-title reveal">Train with Team Roots.</h2>
+  <div class="worldcta__btns reveal">
+    <a href="index.html#trial" class="btn btn--gold">Book a free trial in Sydney</a>
+    <a href="franchise.html" class="btn btn--ghost">Open a Roots in your city</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer__top">
+    <div class="footer__brand">
+      <img src="assets/logo.png" alt="ROOTS Brazilian Jiu-Jitsu">
+      <p>Real jiu-jitsu, planted in Australia by the first Brazilian black belt to open a gym here.
+        Grown from Sydney across the world &mdash; Team Roots worldwide.</p>
+    </div>
+    <nav class="footer__col" aria-label="Train">
+      <h4>Train</h4>
+      <a href="index.html#programs">Programs</a>
+      <a href="academies.html">Team Roots worldwide</a>
+      <a href="faqs.html">FAQs</a>
+      <a href="index.html#trial">Free trial</a>
+    </nav>
+    <nav class="footer__col" aria-label="Grow">
+      <h4>Grow</h4>
+      <a href="franchise.html">Own a Roots</a>
+      <a href="index.html#story">Our roots</a>
+      <a href="instructors.html">Instructors</a>
+    </nav>
+    <div class="footer__col">
+      <h4>Contact</h4>
+      <a href="tel:1300590598">1300 590 598</a>
+      <a href="mailto:info@rootsbjj.com.au">info@rootsbjj.com.au</a>
+      <a href="https://instagram.com/rootsbjj" target="_blank" rel="noopener">Instagram @rootsbjj</a>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>&copy; 2026 ROOTS Brazilian Jiu-Jitsu &middot; ABN 16 595 381 228 &middot;
+      Map base by Al MacDonald / Fritz Lekschas (CC BY-SA 3.0)</span>
+    <span class="footer__values">Respect &middot; Honour &middot; Loyalty &middot; Family</span>
+  </div>
+</footer>
+
+<script src="academies.js"></script>
+</body>
+</html>

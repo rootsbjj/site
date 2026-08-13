@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Timetable — ROOTS BJJ Brookvale</title>
+<meta name="description" content="Class timetable for ROOTS BJJ Brookvale — Little Ninjas, Kids, Teens and Adults BJJ, Monday to Saturday. Book any class as a free trial.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Big+Shoulders+Display:wght@500;700;800&family=Pirata+One&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <a href="index.html" class="nav__logo"><img src="assets/logo-mark.png" alt="ROOTS Brazilian Jiu-Jitsu"></a>
+  <nav class="nav__links" id="navLinks" aria-label="Main">
+    <div class="nav__drop">
+      <button class="nav__droptrigger" aria-expanded="false" aria-haspopup="true">About</button>
+      <div class="nav__dropmenu">
+        <a href="history.html">BJJ History</a>
+        <a href="history-brazil.html">BJJ in Brazil</a>
+        <a href="lineage.html">Lineage</a>
+        <a href="grading.html">Grading System</a>
+        <a href="women.html">Women&rsquo;s BJJ</a>
+        <a href="faqs.html">FAQs</a>
+      </div>
+    </div>
+    <a href="index.html#programs">Programs</a>
+    <a href="timetable.html" aria-current="page">Timetable</a>
+    <a href="instructors.html">Instructors</a>
+    <a href="academies.html">Team Roots</a>
+  </nav>
+  <a href="landing.html#book" class="btn btn--gold nav__cta">Book a free trial</a>
+  <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+
+<section class="page-hero">
+  <p class="section-eyebrow reveal">Brookvale &mdash; Northern Beaches</p>
+  <h1 class="page-hero__title reveal">The week<br><span>on the mat.</span></h1>
+  <p class="page-hero__script reveal">Every class is open as a free trial.</p>
+</section>
+
+<section class="tt">
+  <div class="tt__legend" id="ttLegend"></div>
+  <div class="tt__grid" id="ttGrid"></div>
+  <p class="tt__note">
+    Tap any class to book it as your free trial. Times are Sydney local.
+    Classes marked <b>Fundamentals</b> are the best starting point if you&rsquo;ve never trained.
+  </p>
+</section>
+
+<section class="page-cta">
+  <p class="trial__script reveal">Pick a class. That&rsquo;s the whole commitment.</p><br>
+  <a href="landing.html#book" class="btn btn--gold reveal">Book a free trial</a>
+</section>
+
+<footer class="footer">
+  <div class="footer__top">
+    <div class="footer__brand">
+      <img src="assets/logo.png" alt="ROOTS Brazilian Jiu-Jitsu">
+      <p>Real jiu-jitsu, planted in Australia by the first Brazilian black belt to open a gym here.
+        Grown from Sydney across the world &mdash; Team Roots worldwide.</p>
+    </div>
+    <nav class="footer__col" aria-label="Train">
+      <h4>Train</h4>
+      <a href="index.html#programs">Programs</a>
+      <a href="timetable.html">Timetable</a>
+      <a href="academies.html">Team Roots worldwide</a>
+      <a href="faqs.html">FAQs</a>
+    </nav>
+    <nav class="footer__col" aria-label="Grow">
+      <h4>Grow</h4>
+      <a href="franchise.html">Own a Roots</a>
+      <a href="index.html#story">Our roots</a>
+      <a href="instructors.html">Instructors</a>
+    </nav>
+    <div class="footer__col">
+      <h4>Contact</h4>
+      <a href="tel:1300590598">1300 590 598</a>
+      <a href="mailto:info@rootsbjj.com.au">info@rootsbjj.com.au</a>
+      <a href="https://instagram.com/rootsbjj" target="_blank" rel="noopener">Instagram @rootsbjj</a>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>&copy; 2026 ROOTS Brazilian Jiu-Jitsu &middot; ABN 16 595 381 228</span>
+    <span class="footer__values">Respect &middot; Honour &middot; Loyalty &middot; Family</span>
+  </div>
+</footer>
+
+<script src="schedule.js"></script>
+<script src="page.js"></script>
+<script>
+/* renderiza a grade a partir de schedule.js — nada duplicado à mão */
+(() => {
+  const SC = window.RootsSchedule;
+  const grid = document.getElementById('ttGrid');
+  const legend = document.getElementById('ttLegend');
+
+  legend.innerHTML = Object.values(SC.PROGRAMS).map(p =>
+    `<span class="tt__key tt__key--${p.tone}"><i></i>${p.name}<em>${p.ages}</em></span>`).join('');
+
+  grid.innerHTML = SC.weekGrid().map(d => `
+    <div class="tt__col">
+      <h2 class="tt__day">${d.dayName}</h2>
+      ${d.sessions.map(s => `
+        <a class="tt__cls tt__cls--${SC.PROGRAMS[s.program].tone}"
+           href="landing.html#book" data-program="${s.program}">
+          <span class="tt__time">${s.range}</span>
+          <span class="tt__name">${s.label}</span>
+          <span class="tt__ages">${s.ages}</span>
+          ${s.beginner ? '<span class="tt__beg">Beginner friendly</span>' : ''}
+        </a>`).join('')}
+    </div>`).join('');
+
+  /* leva o programa escolhido para a landing */
+  grid.addEventListener('click', e => {
+    const a = e.target.closest('.tt__cls');
+    if (a) sessionStorage.setItem('roots:program', a.dataset.program);
+  });
+})();
+</script>
+</body>
+</html>

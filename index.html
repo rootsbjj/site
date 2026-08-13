@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ROOTS Brazilian Jiu-Jitsu — Real Jiu-Jitsu, Sydney</title>
+<meta name="description" content="The first Brazilian Jiu-Jitsu gym opened in Australia by a Brazilian black belt. Kids, adults, women's and competition classes in Brookvale, Sydney — and Team Roots academies worldwide.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Big+Shoulders+Display:wght@500;700;800&family=Pirata+One&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body class="has-dark-hero">
+
+<!-- Belt scroll progress (signature) -->
+<div class="belt-progress" aria-hidden="true">
+  <div class="belt-progress__fill" id="beltFill"><span class="belt-progress__bar" id="beltBar"></span></div>
+  <span class="belt-progress__label" id="beltLabel">WHITE BELT</span>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a href="#top" class="nav__logo"><img src="assets/logo-mark.png" alt="ROOTS Brazilian Jiu-Jitsu">
+  </a>
+  <nav class="nav__links" id="navLinks" aria-label="Main">
+    <div class="nav__drop">
+      <button class="nav__droptrigger" aria-expanded="false" aria-haspopup="true">About</button>
+      <div class="nav__dropmenu">
+        <a href="history.html">BJJ History</a>
+        <a href="history-brazil.html">BJJ in Brazil</a>
+        <a href="lineage.html">Lineage</a>
+        <a href="grading.html">Grading System</a>
+        <a href="women.html">Women&rsquo;s BJJ</a>
+        <a href="faqs.html">FAQs</a>
+      </div>
+    </div>
+    <a href="#programs">Programs</a>
+    <a href="instructors.html">Instructors</a>
+    <a href="academies.html">Team Roots</a>
+    <a href="franchise.html">Franchise</a>
+  </nav>
+  <a href="#trial" class="btn btn--gold nav__cta">Book a free trial</a>
+  <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero__bg" data-parallax="0.25">
+    <img src="assets/ref4.jpg" alt="ROOTS black belt professors on the mat in front of the red academy wall">
+  </div>
+  <div class="hero__scrim" aria-hidden="true"></div>
+
+  <div class="hero__content">
+    <p class="hero__eyebrow reveal">Est. 2001 &mdash; Australia&rsquo;s first Brazilian black belt academy</p>
+    <h1 class="hero__title">
+      <span class="hero__line"><span>REAL</span></span>
+      <span class="hero__line hero__line--outline"><span>JIU&#8209;JITSU</span></span>
+    </h1>
+    <p class="hero__script reveal">Bigger than learning to fight.</p>
+    <p class="hero__sub reveal">The first Brazilian Jiu-Jitsu gym opened in Australia by a Brazilian black belt.
+      One family, growing worldwide. Everyone starts somewhere &mdash; start here.</p>
+    <div class="hero__ctas reveal">
+      <a href="#trial" class="btn btn--gold">Book a free trial</a>
+      <a href="#locations" class="btn btn--ghost">Find a location</a>
+    </div>
+  </div>
+
+  <div class="hero__scrollcue" aria-hidden="true"><span></span></div>
+</section>
+
+<!-- ============ VALUES MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span class="marquee__group">
+      <em>Respect</em><i>&#10022;</i><b>Honour</b><i>&#10022;</i><em>Loyalty</em><i>&#10022;</i><b>Family</b><i>&#10022;</i>
+      <em>Respect</em><i>&#10022;</i><b>Honour</b><i>&#10022;</i><em>Loyalty</em><i>&#10022;</i><b>Family</b><i>&#10022;</i>
+      <em>Respect</em><i>&#10022;</i><b>Honour</b><i>&#10022;</i><em>Loyalty</em><i>&#10022;</i><b>Family</b><i>&#10022;</i>
+    </span>
+    <span class="marquee__group" aria-hidden="true">
+      <em>Respect</em><i>&#10022;</i><b>Honour</b><i>&#10022;</i><em>Loyalty</em><i>&#10022;</i><b>Family</b><i>&#10022;</i>
+      <em>Respect</em><i>&#10022;</i><b>Honour</b><i>&#10022;</i><em>Loyalty</em><i>&#10022;</i><b>Family</b><i>&#10022;</i>
+      <em>Respect</em><i>&#10022;</i><b>Honour</b><i>&#10022;</i><em>Loyalty</em><i>&#10022;</i><b>Family</b><i>&#10022;</i>
+    </span>
+  </div>
+</div>
+
+<!-- ============ WHY REAL JIU-JITSU — full-bleed, one word per frame ==== -->
+<section class="why" id="why">
+  <header class="why__head">
+    <h2 class="why__title reveal">Why real <span>jiu&#8209;jitsu?</span></h2>
+    <p class="why__lead reveal">Bigger than learning to fight.</p>
+  </header>
+
+  <div class="why__wall">
+    <figure class="why__tile reveal">
+      <img src="assets/photos/kids-class.jpg" alt="Kids in gis at ROOTS Brookvale" loading="lazy">
+      <figcaption><b>Confidence</b><span>when life gets hard</span></figcaption>
+    </figure>
+    <figure class="why__tile reveal">
+      <img src="assets/photos/teens-grading.jpg" alt="A teen training on the mat" loading="lazy">
+      <figcaption><b>Discipline</b><span>when motivation fades</span></figcaption>
+    </figure>
+    <figure class="why__tile reveal">
+      <img src="assets/photos/dhulassi.jpg" alt="A ROOTS competitor under the lights" loading="lazy">
+      <figcaption><b>Resilience</b><span>when you want to quit</span></figcaption>
+    </figure>
+    <figure class="why__tile reveal">
+      <img src="assets/ref3.jpg" alt="The ROOTS kids team lined up together" loading="lazy">
+      <figcaption><b>Friendship</b><span>that lasts a lifetime</span></figcaption>
+    </figure>
+    <figure class="why__tile reveal">
+      <img src="assets/photos/adults-training.jpg" alt="Adults drilling live in class" loading="lazy">
+      <figcaption><b>Strength</b><span>healthier and more capable</span></figcaption>
+    </figure>
+    <figure class="why__tile reveal">
+      <img src="assets/photos/phillipa.jpg" alt="Professor Paulo tying a new black belt" loading="lazy">
+      <figcaption><b>The real art</b><span>self-defence to No-Gi and competition</span></figcaption>
+    </figure>
+  </div>
+
+  <p class="why__become reveal">Jiu-jitsu isn&rsquo;t just something you do.<br><span>It&rsquo;s something you become.</span></p>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats">
+  <div class="stats__grid">
+    <div class="stat reveal">
+      <span class="stat__num">1<sup>st</sup></span>
+      <span class="stat__label">BJJ gym in Australia opened by a Brazilian black belt</span>
+    </div>
+    <div class="stat reveal">
+      <span class="stat__num">30</span>
+      <span class="stat__label">Team Roots academies across three countries</span>
+    </div>
+    <div class="stat reveal">
+      <span class="stat__num">6</span>
+      <span class="stat__label">Days a week on the mat &mdash; Monday to Saturday</span>
+    </div>
+    <div class="stat reveal">
+      <span class="stat__num">&infin;</span>
+      <span class="stat__label">One family on the mat &mdash; kids to black belts</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY (the red wall) ============ -->
+<section class="story" id="story">
+  <div class="story__inner">
+    <p class="section-eyebrow section-eyebrow--bone reveal">Our roots</p>
+    <h2 class="story__statement" id="storyStatement">
+      Before Brazilian jiu-jitsu had a home in Australia,
+      one Brazilian black belt brought it here.
+    </h2>
+    <div class="story__cols reveal">
+      <p>ROOTS BJJ was the first Brazilian Jiu-Jitsu gym to be opened in Australia by a Brazilian black belt.
+        Our vision is simple: empower people mentally and physically to live a better, more balanced life
+        through the benefits of martial arts.</p>
+      <p>Discipline. Respect. Self-confidence. Self-defence. Focus. Mental strength. Coordination.
+        Real training, real friendships &mdash; real jiu-jitsu, taught the way it was passed down to us.</p>
+    </div>
+    <a href="#professor" class="story__link reveal">Meet the lineage <span aria-hidden="true">&darr;</span></a>
+  </div>
+  <div class="story__photo">
+    <img src="assets/ref1.jpg" alt="Professor Paulo Guimaraes tying a new belt on a young student while families watch">
+    <figcaption>Grading day at Brookvale &mdash; the whole family watches.</figcaption>
+  </div>
+</section>
+
+<!-- ============ PILLARS ============ -->
+<section class="pillars">
+  <p class="section-eyebrow reveal">Why ROOTS</p>
+  <h2 class="section-title reveal">A gym where you train as a team<br>and feel like family.</h2>
+  <div class="pillars__list">
+    <article class="pillar reveal" data-tilt>
+      <span class="pillar__belt pillar__belt--white" aria-hidden="true"></span>
+      <h3>The Lineage</h3>
+      <p>Second-generation Rickson Gracie black belt at the head of the room. Technique passed hand to hand
+        from Rio to Sydney &mdash; nothing watered down.</p>
+    </article>
+    <article class="pillar reveal" data-tilt>
+      <span class="pillar__belt pillar__belt--black" aria-hidden="true"></span>
+      <h3>The Mats</h3>
+      <p>World-class mats, high-level coaching, plenty of free parking, and a bright, airy
+        training space designed for Brazilian Jiu-Jitsu.</p>
+    </article>
+    <article class="pillar reveal" data-tilt>
+      <span class="pillar__belt pillar__belt--red" aria-hidden="true"></span>
+      <h3>The Family</h3>
+      <p>More than a team, we&rsquo;re a community. Kids, teens, parents, beginners and black belts
+        all side by side, united by respect, honour and loyalty.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ============ PROGRAMS (accordion) ============ -->
+<section class="programs" id="programs">
+  <p class="section-eyebrow reveal">Programs</p>
+  <h2 class="section-title reveal">Everyone starts as a white belt.</h2>
+  <p class="section-sub reveal">Hover or tap a program to open it.</p>
+
+  <div class="acc" id="accordion">
+    <article class="acc__item is-open" style="--img:url('assets/photos/kids-class.jpg')">
+      <header><h3>Kids</h3><span class="acc__index">K</span></header>
+      <div class="acc__body">
+        <p>Confidence. Discipline, coordination, focus and friendship for young grapplers &mdash;
+          in a structured, safe and seriously fun class.</p>
+        <a href="#trial" class="btn btn--small btn--gold">Try a kids class</a>
+      </div>
+    </article>
+    <article class="acc__item" style="--img:url('assets/photos/teens-grading.jpg')">
+      <header><h3>Teens</h3><span class="acc__index">T</span></header>
+      <div class="acc__body">
+        <p>A crucial stage of life deserves the right guidance. We help teens build confidence,
+          discipline and strong values while developing the physical and mental foundations
+          they&rsquo;ll carry into adulthood.</p>
+        <a href="#trial" class="btn btn--small btn--gold">Try a teens class</a>
+      </div>
+    </article>
+    <article class="acc__item" style="--img:url('assets/photos/adults-training.jpg')">
+      <header><h3>Adults</h3><span class="acc__index">A</span></header>
+      <div class="acc__body">
+        <p>Whether you&rsquo;re here for the lifestyle or the podium, you&rsquo;ll find expert coaching,
+          challenging training and a welcoming community. No experience needed &mdash; just step
+          onto the mats.</p>
+        <a href="#trial" class="btn btn--small btn--gold">Try an adults class</a>
+      </div>
+    </article>
+    <article class="acc__item" style="--img:url('assets/photos/phillipa.jpg')">
+      <header><h3>Women</h3><span class="acc__index">W</span></header>
+      <div class="acc__body">
+        <p>Get fit. Build confidence. Learn real self-defence. Train in a supportive women-only
+          community. No experience needed.</p>
+        <a href="#trial" class="btn btn--small btn--gold">Try a women&rsquo;s class</a>
+      </div>
+    </article>
+    <article class="acc__item" style="--img:url('assets/photos/dhulassi.jpg')">
+      <header><h3>Competition</h3><span class="acc__index">C</span></header>
+      <div class="acc__body">
+        <p>Success on the podium starts long before competition day. Every session develops the focus,
+          discipline, determination and resilience needed to perform at your highest level.</p>
+        <a href="#trial" class="btn btn--small btn--gold">Join comp training</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ PROFESSOR / LINEAGE ============ -->
+<section class="professor" id="professor">
+  <div class="professor__photo" data-parallax="0.12">
+    <img src="assets/ref2.jpg" alt="Professor Paulo Guimaraes promoting a young student in front of the class">
+  </div>
+  <div class="professor__content">
+    <p class="section-eyebrow reveal">Head Coach</p>
+    <h2 class="section-title reveal">Paulo Guimaraes</h2>
+    <p class="professor__bio reveal">World Champion. The highest-ranked Brazilian black belt in Australia &mdash;
+      and the first to open a BJJ academy here. A second-generation Rickson Gracie black belt under
+      Master Jorge Pereira, Paulo has spent his life passing real jiu-jitsu to the next generation.</p>
+
+    <ol class="lineage reveal" aria-label="Lineage">
+      <li><span class="lineage__who">Rickson Gracie</span><span class="lineage__what">The standard of real jiu-jitsu</span></li>
+      <li><span class="lineage__who">Jorge Pereira</span><span class="lineage__what">Rickson Gracie black belt, Rio de Janeiro</span></li>
+      <li><span class="lineage__who">Paulo Guimaraes</span><span class="lineage__what">ROOTS BJJ &mdash; Sydney, Australia</span></li>
+      <li class="lineage__you"><span class="lineage__who">You</span><span class="lineage__what">The next chapter starts on our mat</span></li>
+    </ol>
+
+    <p class="professor__team reveal">Alongside a full team of qualified black belt coaches in Sydney &mdash;
+      and Team Roots leaders running 29 more academies across South Korea and Mongolia.
+      <a href="instructors.html" class="professor__worldlink">Meet the instructors &rarr;</a></p>
+  </div>
+</section>
+
+<!-- ============ LOCATIONS ============ -->
+<section class="locations" id="locations">
+  <p class="section-eyebrow reveal">Locations</p>
+  <h2 class="section-title reveal">One standard. Worldwide.</h2>
+  <div class="locations__grid">
+    <article class="loc reveal" data-tilt>
+      <span class="loc__tag">Australia HQ &mdash; Northern Beaches</span>
+      <h3>Brookvale</h3>
+      <p class="loc__addr">2/16 Dale Street, Brookvale NSW 2100</p>
+      <ul>
+        <li>Off-street private parking</li>
+        <li>Kids, teens, adults, women&rsquo;s &amp; comp classes</li>
+        <li>Finalist &mdash; 2023 Northern Beaches Small Business Awards</li>
+      </ul>
+      <div class="loc__foot">
+        <span>Classes Mon&ndash;Sat</span>
+        <span class="loc__btns">
+          <a class="btn btn--small btn--gold" href="https://www.rootsbjj.com.au/timetable-330213-728905.html" target="_blank" rel="noopener">Check the timetable</a>
+          <a class="btn btn--small btn--ghost" href="https://maps.google.com/?q=2/16+Dale+Street+Brookvale+NSW+2100" target="_blank" rel="noopener">Directions</a>
+        </span>
+      </div>
+    </article>
+    <article class="loc loc--world reveal" data-tilt>
+      <span class="loc__tag">Team Roots</span>
+      <h3>Worldwide</h3>
+      <p class="loc__addr">Australia &middot; South Korea &middot; Mongolia</p>
+      <ul>
+        <li>27 Team Roots academies across South Korea</li>
+        <li>Glory MMA on the Mongolia&ndash;China border</li>
+        <li>Your belt travels &mdash; train wherever Roots is</li>
+      </ul>
+      <div class="loc__foot">
+        <span>Roots. Growing worldwide.</span>
+        <a class="btn btn--small btn--gold" href="academies.html">Explore the map</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="voices">
+  <p class="section-eyebrow reveal">From the mat</p>
+  <div class="voices__stage">
+    <blockquote class="voice is-active">
+      <p>&ldquo;I have no words to express the support and attention that Paulo has with all the children.&rdquo;</p>
+      <cite>&mdash; Natalia &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</cite>
+    </blockquote>
+    <blockquote class="voice">
+      <p>&ldquo;Such a great experience being part of this gym. Wish I&rsquo;d started my BJJ journey earlier!&rdquo;</p>
+      <cite>&mdash; Roderick &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</cite>
+    </blockquote>
+    <blockquote class="voice">
+      <p>&ldquo;Paulo and the team are welcoming, friendly &amp; professional &mdash; they teach and lead by example.&rdquo;</p>
+      <cite>&mdash; Matt &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</cite>
+    </blockquote>
+    <blockquote class="voice">
+      <p>&ldquo;My journey here has been life-changing, both mentally and physically.&rdquo;</p>
+      <cite>&mdash; Matt, 43 &mdash; two years on the mat &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</cite>
+    </blockquote>
+    <blockquote class="voice">
+      <p>Five stars on Google &mdash; read what our families say about training at Roots.</p>
+      <cite>&#9733;&#9733;&#9733;&#9733;&#9733; &mdash; <a href="https://share.google/QkVXt9Tm8a8Wcst5l" target="_blank" rel="noopener">Google Reviews</a></cite>
+    </blockquote>
+  </div>
+  <div class="voices__nav" role="tablist" aria-label="Testimonials">
+    <button class="voices__dot is-active" aria-label="Review 1"></button>
+    <button class="voices__dot" aria-label="Review 2"></button>
+    <button class="voices__dot" aria-label="Review 3"></button>
+    <button class="voices__dot" aria-label="Review 4"></button>
+    <button class="voices__dot" aria-label="Review 5"></button>
+  </div>
+  <p class="voices__more reveal">See more reviews on
+    <a href="https://share.google/QkVXt9Tm8a8Wcst5l" target="_blank" rel="noopener">Google &rarr;</a></p>
+</section>
+
+<!-- ============ CTA / TRIAL ============ -->
+<section class="trial" id="trial">
+  <span class="trial__mark" data-parallax="0.18" aria-hidden="true">Roots</span>
+  <div class="trial__inner">
+    <p class="trial__script reveal">No experience. No contract. No judgement.</p>
+    <h2 class="trial__title reveal">Your first class<br>is on us.</h2>
+    <form class="trial__form reveal" id="trialForm" novalidate>
+      <div class="trial__row">
+        <label class="sr-only" for="f-name">Name</label>
+        <input id="f-name" name="name" type="text" placeholder="Your name" required autocomplete="name">
+        <label class="sr-only" for="f-email">Email</label>
+        <input id="f-email" name="email" type="email" placeholder="Email address" required autocomplete="email">
+      </div>
+      <div class="trial__row">
+        <button type="submit" class="btn btn--gold trial__submit">Book my free class</button>
+      </div>
+      <p class="trial__ok" id="trialOk" hidden>&#10003; Osu! We&rsquo;ll be in touch to lock in your first class.
+        Can&rsquo;t wait? Call <a href="tel:1300590598">1300 590 598</a>.</p>
+    </form>
+    <p class="trial__alt reveal">Prefer to talk? <a href="tel:1300590598">1300 590 598</a> &middot; Monday to Saturday</p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer__top">
+    <div class="footer__brand">
+      <img src="assets/logo.png" alt="ROOTS Brazilian Jiu-Jitsu">
+      <p>Real jiu-jitsu, planted in Australia by the first Brazilian black belt to open a gym here.
+        Grown from Sydney across the world &mdash; Team Roots worldwide.</p>
+    </div>
+    <nav class="footer__col" aria-label="Train">
+      <h4>Train</h4>
+      <a href="#programs">Programs</a>
+      <a href="#locations">Locations</a>
+      <a href="academies.html">Team Roots worldwide</a>
+      <a href="faqs.html">FAQs</a>
+      <a href="#trial">Free trial</a>
+    </nav>
+    <nav class="footer__col" aria-label="Grow">
+      <h4>Grow</h4>
+      <a href="franchise.html">Own a Roots</a>
+      <a href="#story">Our roots</a>
+      <a href="instructors.html">Instructors</a>
+    </nav>
+    <div class="footer__col">
+      <h4>Contact</h4>
+      <a href="tel:1300590598">1300 590 598</a>
+      <a href="https://instagram.com/rootsbjj" target="_blank" rel="noopener">Instagram @rootsbjj</a>
+      <a href="https://facebook.com/rootsbjj" target="_blank" rel="noopener">Facebook</a>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>&copy; 2026 ROOTS Brazilian Jiu-Jitsu &middot; ABN 16 595 381 228</span>
+    <span class="footer__values">Respect &middot; Honour &middot; Loyalty &middot; Family</span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

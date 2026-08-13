@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# segredos — nunca versionar
+.env
+.env.*
+!.env.example
+
+# dependências / build
+node_modules/
+dist/
