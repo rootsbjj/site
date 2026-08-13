@@ -32,7 +32,7 @@
     <a href="instructors.html">Instructors</a>
     <a href="academies.html">Team Roots</a>
   </nav>
-  <a href="landing.html#book" class="btn btn--gold nav__cta">Book a free trial</a>
+  <a href="index.html#trial" class="btn btn--gold nav__cta">Book a free trial</a>
   <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </header>
 
@@ -53,7 +53,7 @@
 
 <section class="page-cta">
   <p class="trial__script reveal">Pick a class. That&rsquo;s the whole commitment.</p><br>
-  <a href="landing.html#book" class="btn btn--gold reveal">Book a free trial</a>
+  <a href="index.html#trial" class="btn btn--gold reveal">Book a free trial</a>
 </section>
 
 <footer class="footer">
@@ -106,7 +106,7 @@
       <h2 class="tt__day">${d.dayName}</h2>
       ${d.sessions.map(s => `
         <a class="tt__cls tt__cls--${SC.PROGRAMS[s.program].tone}"
-           href="landing.html#book" data-program="${s.program}">
+           href="index.html#trial" data-program="${s.program}" data-day="${s.day}">
           <span class="tt__time">${s.range}</span>
           <span class="tt__name">${s.label}</span>
           <span class="tt__ages">${s.ages}</span>
@@ -117,7 +117,12 @@
   /* leva o programa escolhido para a landing */
   grid.addEventListener('click', e => {
     const a = e.target.closest('.tt__cls');
-    if (a) sessionStorage.setItem('roots:program', a.dataset.program);
+    if (!a) return;
+    sessionStorage.setItem('roots:program', a.dataset.program);
+    // guarda a próxima data real desse dia da semana, para o calendário já abrir nela
+    const next = SC.nextSessions(a.dataset.program, { days: 21, limit: 60 })
+      .find(x => String(x.day) === a.dataset.day);
+    if (next) sessionStorage.setItem('roots:date', next.date);
   });
 })();
 </script>

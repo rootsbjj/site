@@ -2195,6 +2195,217 @@ body::after { display: none; }
 /* clay on espresso is too close in value — brass carries the brand line */
 .footer__values { color: var(--gold-soft); }
 
+/* motor de agendamento dentro da seção de trial da home */
+.trial__lead {
+  max-width: 34rem; margin: 0 auto 2rem;
+  color: var(--smoke); font-size: 1rem;
+}
+.trial__engine {
+  margin: 0 auto; text-align: left;
+  background: #FCFCFB; border: 1px solid var(--line);
+  box-shadow: 0 2px 4px rgba(28,28,30,0.05), 0 22px 50px rgba(28,28,30,0.09);
+  padding: clamp(1.3rem, 3vw, 2.2rem);
+}
+.trial__engine .bk { max-width: none; }
+
+/* ═══ BOOKING WIDGET — calendário + aulas reais ═══════════════════ */
+.bk { max-width: 56rem; }
+.bk__step { margin-bottom: 1.9rem; }
+.bk__step.is-missing .bk__cal { outline: 2px solid var(--red); outline-offset: 6px; }
+.bk__step.is-missing .bk__legend::after {
+  content: 'pick a day and a class first';
+  margin-left: 0.7rem; color: var(--red);
+  font-size: 0.66rem; letter-spacing: 0.1em;
+}
+.bk__legend {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-family: var(--font-label); font-weight: 700;
+  font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--smoke); margin: 0 0 0.85rem;
+}
+.bk__legend i {
+  display: grid; place-items: center; font-style: normal;
+  width: 1.5rem; height: 1.5rem; flex: 0 0 auto;
+  background: var(--ink); color: var(--bone);
+  font-size: 0.78rem; letter-spacing: 0;
+}
+
+/* programas */
+.bk__progs { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.bk__prog {
+  cursor: pointer; text-align: left;
+  background: #FCFCFB; border: 1.5px solid var(--line);
+  padding: 0.6rem 0.9rem; transition: border-color 0.2s, background 0.2s;
+}
+.bk__prog b {
+  display: block; font-family: var(--font-label); font-weight: 700;
+  font-size: 0.95rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink);
+}
+.bk__prog span { display: block; font-size: 0.72rem; color: var(--smoke); }
+.bk__prog:hover { border-color: var(--line-firm); }
+.bk__prog.is-on { background: var(--ink); border-color: var(--ink); }
+.bk__prog.is-on b { color: var(--bone); }
+.bk__prog.is-on span { color: var(--gold-soft); }
+
+/* idade → programa */
+.bk__age {
+  display: flex; align-items: center; gap: 0.7rem; flex-wrap: wrap;
+  margin-top: 0.8rem; padding: 0.6rem 0.8rem;
+  background: var(--paper-2); border-left: 2px solid var(--gold);
+  transition: background 0.4s;
+}
+.bk__age.is-matched { background: var(--red-wash); border-left-color: var(--red); }
+.bk__age span { font-size: 0.82rem; color: var(--smoke); flex: 1 1 14rem; }
+.bk__age input {
+  width: 5rem; padding: 0.45rem 0.6rem;
+  background: #FCFCFB; border: 1px solid var(--line);
+  font-family: var(--font-body); font-size: 0.95rem; color: var(--ink);
+}
+
+/* calendário */
+.bk__cal { background: #FCFCFB; border: 1px solid var(--line); padding: 0.9rem; }
+.bk__calhead {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 0.7rem;
+}
+.bk__calhead strong {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: 1.1rem; letter-spacing: -0.01em; color: var(--ink);
+}
+.bk__nav {
+  cursor: pointer; background: none; border: 1px solid var(--line);
+  width: 2rem; height: 2rem; color: var(--ink); font-size: 0.9rem;
+}
+.bk__nav:disabled { opacity: 0.3; cursor: default; }
+.bk__nav:not(:disabled):hover { background: var(--ink); color: var(--bone); border-color: var(--ink); }
+.bk__dow, .bk__grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; }
+.bk__dow span {
+  text-align: center; padding-bottom: 0.35rem;
+  font-family: var(--font-label); font-weight: 700;
+  font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--smoke);
+}
+.bk__cell {
+  position: relative; aspect-ratio: 1; display: grid; place-items: center;
+  border: 1px solid transparent; background: none;
+  font-size: 0.88rem; color: var(--ink);
+}
+.bk__cell.is-blank { visibility: hidden; }
+.bk__cell.is-off { color: rgba(38,38,38,0.26); }
+.bk__cell.has { cursor: pointer; border-color: var(--line); font-weight: 600; }
+.bk__cell.has i {
+  position: absolute; bottom: 16%; width: 4px; height: 4px; border-radius: 50%;
+  background: var(--red);
+}
+.bk__cell.has em { display: none; }
+.bk__cell.has:hover { border-color: var(--line-firm); background: var(--paper-2); }
+.bk__cell.is-today { text-decoration: underline; text-underline-offset: 3px; }
+.bk__cell.is-on { background: var(--ink); border-color: var(--ink); color: var(--bone); }
+.bk__cell.is-on i { background: var(--gold-soft); }
+.bk__callegend {
+  display: flex; align-items: center; gap: 0.4rem;
+  margin: 0.7rem 0 0; font-size: 0.75rem; color: var(--smoke);
+}
+.bk__dot { width: 5px; height: 5px; border-radius: 50%; background: var(--red); display: inline-block; }
+
+/* trilha de dias (variante compacta) */
+.bk__strip { display: flex; gap: 0.4rem; overflow-x: auto; padding-bottom: 0.4rem; }
+.bk__sday {
+  flex: 0 0 auto; cursor: pointer; text-align: left;
+  background: #FCFCFB; border: 1.5px solid var(--line); padding: 0.5rem 0.75rem;
+}
+.bk__sday b {
+  display: block; font-family: var(--font-label); font-weight: 700;
+  font-size: 0.84rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink);
+}
+.bk__sday span { display: block; font-size: 0.66rem; color: var(--smoke); }
+.bk__sday.is-on { background: var(--ink); border-color: var(--ink); }
+.bk__sday.is-on b { color: var(--bone); }
+.bk__sday.is-on span { color: var(--gold-soft); }
+
+/* horários */
+.bk__slots { display: grid; gap: 0.45rem; }
+.bk__slot {
+  position: relative; cursor: pointer; text-align: left;
+  display: grid; grid-template-columns: 8rem 1fr; align-items: center; gap: 0.8rem;
+  background: #FCFCFB; border: 1.5px solid var(--line); padding: 0.7rem 0.9rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+.bk__slot:hover { border-color: var(--line-firm); }
+.bk__slot.is-on { border-color: var(--red); background: var(--red-wash); }
+.bk__slot.is-on::after {
+  content: "\2713"; position: absolute; right: 0.9rem; top: 50%;
+  translate: 0 -50%; color: var(--red); font-weight: 700;
+}
+.bk__time {
+  font-family: var(--font-label); font-weight: 700;
+  font-size: 0.95rem; letter-spacing: 0.03em; color: var(--ink);
+}
+.bk__what { font-size: 0.88rem; color: var(--ink); line-height: 1.25; }
+.bk__what em { display: block; font-style: normal; font-size: 0.74rem; color: var(--smoke); }
+.bk__flag {
+  grid-column: 1 / -1;
+  font-family: var(--font-label); font-weight: 700;
+  font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-ink);
+}
+.bk__hint, .bk__none { font-size: 0.84rem; color: var(--smoke); margin: 0.6rem 0 0; }
+.bk__hint { border-left: 2px solid var(--gold); padding-left: 0.7rem; }
+.bk__hint b { color: var(--ink); }
+.bk__hint button, .bk__none a {
+  background: none; border: 0; padding: 0; cursor: pointer; font: inherit;
+  color: var(--gold-ink); font-weight: 700; text-decoration: underline; text-underline-offset: 2px;
+}
+
+/* dados + envio */
+.bk__fields { display: grid; gap: 0.6rem; grid-template-columns: 1fr 1fr; }
+.bk__in {
+  background: #FCFCFB; border: 1px solid var(--line); color: var(--ink);
+  font-family: var(--font-body); font-size: 1rem; padding: 0.85rem 1rem; width: 100%;
+}
+.bk__in--wide { grid-column: 1 / -1; }
+.bk__in:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
+.bk__summary {
+  background: var(--ink); color: var(--bone);
+  padding: 0.85rem 1rem; margin-bottom: 0.9rem; font-size: 0.95rem;
+}
+.bk__summary b { color: var(--gold-soft); }
+.bk__summary span { display: block; font-size: 0.78rem; color: rgba(246,242,234,0.6); margin-top: 0.15rem; }
+.bk__submit { width: 100%; border: 0; font-size: 1.08rem; padding: 1rem 1.5rem; }
+.bk__micro { font-size: 0.8rem; color: var(--smoke); margin-top: 0.7rem; text-align: center; }
+
+/* confirmação */
+.bk__done-kicker {
+  font-family: var(--font-script); font-size: 1.6rem; color: var(--gold-ink); rotate: -1.5deg;
+}
+.bk__ticket {
+  border: 1px solid var(--line); border-left: 4px solid var(--red);
+  background: var(--paper); padding: 1.1rem 1.2rem; margin: 0.8rem 0 1.4rem;
+}
+.bk__t-day {
+  font-family: var(--font-label); font-weight: 700;
+  font-size: 0.76rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--smoke);
+}
+.bk__t-time {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: 2.1rem; line-height: 1.05; letter-spacing: -0.02em; color: var(--ink); margin: 0.15rem 0 0.3rem;
+}
+.bk__t-what { font-size: 0.95rem; color: var(--ink); }
+.bk__t-where { font-size: 0.82rem; color: var(--smoke); margin-top: 0.35rem; }
+.bk__next { list-style: none; display: grid; gap: 0.7rem; counter-reset: bk; }
+.bk__next li { padding-left: 1.9rem; position: relative; font-size: 0.95rem; color: var(--smoke); }
+.bk__next li b { color: var(--ink); }
+.bk__next li::before {
+  content: counter(bk); counter-increment: bk;
+  position: absolute; left: 0; top: 0;
+  font-family: var(--font-display); font-weight: 800; color: var(--red); font-size: 1.1rem;
+}
+.bk__done-acts { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 1.3rem; }
+
+@media (max-width: 620px) {
+  .bk__fields { grid-template-columns: 1fr; }
+  .bk__slot { grid-template-columns: 1fr; gap: 0.15rem; }
+  .bk__cell { font-size: 0.8rem; }
+}
+
 /* ═══ TIMETABLE — a semana inteira, alimentada por schedule.js ═════ */
 .tt { max-width: 82rem; margin: 0 auto; padding: clamp(2rem, 4vw, 3rem) var(--pad) clamp(3rem, 6vw, 4.5rem); }
 .tt__legend { display: flex; gap: 1.2rem; flex-wrap: wrap; margin-bottom: 1.8rem; }

@@ -172,15 +172,11 @@
     voiceTimer = setInterval(() => showVoice((voiceIdx + 1) % voices.length), 5500);
   };
 
-  /* ---------- Trial form (front-end only) ---------- */
-  const form = document.getElementById('trialForm');
-  const ok = document.getElementById('trialOk');
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    if (!form.checkValidity()) { form.reportValidity(); return; }
-    ok.hidden = false;
-    form.querySelectorAll('input, select, button').forEach(el => (el.disabled = true));
-    ok.scrollIntoView({ block: 'nearest', behavior: reduceMotion ? 'auto' : 'smooth' });
+  /* O agendamento da home é o widget de booking.js (<div data-booking>),
+     que monta e valida sozinho. Aqui só ouvimos o resultado. */
+  document.addEventListener('roots:booked', e => {
+    // ponto de integração com pixel / analytics quando o backend existir
+    // fbq('track', 'Schedule', { content_name: e.detail.classLabel });
   });
 
   /* ---------- Subtle tilt on cards ---------- */

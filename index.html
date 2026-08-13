@@ -36,6 +36,7 @@
       </div>
     </div>
     <a href="#programs">Programs</a>
+    <a href="timetable.html">Timetable</a>
     <a href="instructors.html">Instructors</a>
     <a href="academies.html">Team Roots</a>
     <a href="franchise.html">Franchise</a>
@@ -353,20 +354,13 @@
   <div class="trial__inner">
     <p class="trial__script reveal">No experience. No contract. No judgement.</p>
     <h2 class="trial__title reveal">Your first class<br>is on us.</h2>
-    <form class="trial__form reveal" id="trialForm" novalidate>
-      <div class="trial__row">
-        <label class="sr-only" for="f-name">Name</label>
-        <input id="f-name" name="name" type="text" placeholder="Your name" required autocomplete="name">
-        <label class="sr-only" for="f-email">Email</label>
-        <input id="f-email" name="email" type="email" placeholder="Email address" required autocomplete="email">
-      </div>
-      <div class="trial__row">
-        <button type="submit" class="btn btn--gold trial__submit">Book my free class</button>
-      </div>
-      <p class="trial__ok" id="trialOk" hidden>&#10003; Osu! We&rsquo;ll be in touch to lock in your first class.
-        Can&rsquo;t wait? Call <a href="tel:1300590598">1300 590 598</a>.</p>
-    </form>
-    <p class="trial__alt reveal">Prefer to talk? <a href="tel:1300590598">1300 590 598</a> &middot; Monday to Saturday</p>
+    <p class="trial__lead reveal">Pick a real class from the timetable below &mdash; you leave here with a
+      day and a time, not a promise that someone will call you back.</p>
+
+    <div class="trial__engine reveal" data-booking></div>
+
+    <p class="trial__alt reveal">Prefer to talk? <a href="tel:1300590598">1300 590 598</a> &middot;
+      Monday to Saturday &middot; or <a href="timetable.html">see the full timetable</a></p>
   </div>
 </section>
 
@@ -405,6 +399,8 @@
   </div>
 </footer>
 
+<script src="schedule.js"></script>
+<script src="booking.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

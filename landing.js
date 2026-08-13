@@ -30,19 +30,14 @@
   window.addEventListener('resize', onScroll);
   onScroll();
 
-  /* ---------- Program buttons pre-select the chip and jump to the form ---------- */
+  /* ---------- Cards de programa: seleciona no widget e sobe para o form ---------- */
   const scrollToForm = () => {
     formCard.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
-    setTimeout(() => document.getElementById('ld-name').focus({ preventScroll: true }), reduceMotion ? 0 : 550);
   };
   document.querySelectorAll('[data-book]').forEach(btn => {
     btn.addEventListener('click', () => {
-      const chip = document.querySelector(`.ld-chips input[value="${btn.dataset.book}"]`);
-      if (chip) {
-        chip.checked = true;
-        // .checked não dispara change — o motor precisa recarregar as aulas
-        chip.dispatchEvent(new Event('change', { bubbles: true }));
-      }
+      // clica o botão de programa dentro do widget — ele recarrega as aulas sozinho
+      document.querySelector(`.bk__prog[data-prog="${btn.dataset.book}"]`)?.click();
       scrollToForm();
     });
   });
@@ -51,39 +46,10 @@
   });
 
   /* ---------- Booking form ---------- */
-  const form = document.getElementById('ldForm');
-  const ok = document.getElementById('ldOk');
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-
-    // a aula tem de estar escolhida antes dos dados de contato
-    const B = window.RootsBooking;
-    const slotError = B ? B.validate() : null;
-    if (slotError) {
-      const slots = document.getElementById('ldSlots');
-      slots.classList.add('is-missing');
-      document.getElementById('ldMicro').textContent = slotError;
-      slots.scrollIntoView({ block: 'center', behavior: reduceMotion ? 'auto' : 'smooth' });
-      setTimeout(() => slots.classList.remove('is-missing'), 2200);
-      return;
-    }
-    if (!form.checkValidity()) { form.reportValidity(); return; }
-
-    // conversion hooks — wire these when the pixel / backend is connected:
-    // fbq('track', 'Schedule', { content_name: B.chosen.label });
-    // window.dataLayer?.push({ event: 'trial_booked', ...B.chosen });
-
-    if (B) {
-      document.getElementById('ldTicket').innerHTML = B.ticketHTML();
-      const ics = document.getElementById('ldIcs');
-      if (ics) ics.href = B.icsHref();
-    }
-
-    form.hidden = true;
-    document.querySelector('.ld-card__title').hidden = true;
-    document.querySelector('.ld-card > .ld-card__script').hidden = true;
-    ok.hidden = false;
-    ok.scrollIntoView({ block: 'nearest', behavior: reduceMotion ? 'auto' : 'smooth' });
-    document.dispatchEvent(new CustomEvent('roots:booked'));
+  /* O card usa o widget de booking.js — ele valida, confirma e emite
+     `roots:booked`. Aqui só reagimos ao resultado. */
+  document.addEventListener('roots:booked', () => {
+    sticky.classList.remove('is-shown');
+    // fbq('track','Schedule');
   });
 })();

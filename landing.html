@@ -47,53 +47,7 @@
   <div class="ld-card reveal" id="form">
     <p class="ld-card__script">Claim your free class</p>
     <h2 class="ld-card__title">Book in 20 seconds</h2>
-    <form id="ldForm" novalidate>
-      <fieldset class="ld-chips">
-        <legend>1 &middot; Who&rsquo;s training?</legend>
-        <label><input type="radio" name="program" value="ninjas"><span>Little Ninjas <em>3&ndash;5</em></span></label>
-        <label><input type="radio" name="program" value="kids"><span>Kids <em>6&ndash;12</em></span></label>
-        <label><input type="radio" name="program" value="teens"><span>Teens <em>12&ndash;17</em></span></label>
-        <label><input type="radio" name="program" value="adults" checked><span>Adults <em>16+</em></span></label>
-      </fieldset>
-
-      <fieldset class="ld-slots" id="ldSlots">
-        <legend>2 &middot; Pick your class</legend>
-        <div class="ld-slots__days" id="ldDays" role="tablist" aria-label="Available days"></div>
-        <div class="ld-slots__list" id="ldTimes"></div>
-        <p class="ld-slots__hint" id="ldHint" hidden></p>
-        <input type="hidden" name="session" id="ld-session" required>
-      </fieldset>
-
-      <fieldset class="ld-who">
-        <legend>3 &middot; Where do we send the confirmation?</legend>
-        <div class="ld-field">
-          <label class="sr-only" for="ld-name">Your name</label>
-          <input id="ld-name" name="name" type="text" placeholder="Your name" required autocomplete="name">
-        </div>
-        <div class="ld-field">
-          <label class="sr-only" for="ld-phone">Mobile number</label>
-          <input id="ld-phone" name="phone" type="tel" placeholder="Mobile number" required autocomplete="tel" inputmode="tel">
-        </div>
-      </fieldset>
-
-      <button type="submit" class="btn btn--gold ld-card__submit">Confirm my free class</button>
-      <p class="ld-card__micro" id="ldMicro">Free trial, no contract. We&rsquo;ll text you a confirmation
-        &mdash; arrive 10 minutes early.</p>
-    </form>
-    <div class="ld-card__ok" id="ldOk" hidden>
-      <p class="ld-card__script">Osu! You&rsquo;re booked.</p>
-      <div class="ld-ticket" id="ldTicket"></div>
-      <h3>What happens next</h3>
-      <ol>
-        <li><b>We text you a confirmation</b> to the number you left.</li>
-        <li><b>Arrive 10 minutes early</b> in comfortable clothes with a water bottle.</li>
-        <li><b>Step on the mat.</b> Your coach takes it from there.</li>
-      </ol>
-      <div class="ld-ok__acts">
-        <a class="btn btn--small btn--ghost" id="ldIcs" download="roots-trial.ics">Add to calendar</a>
-        <a class="btn btn--small btn--ghost" href="tel:1300590598">Call us</a>
-      </div>
-    </div>
+    <div data-booking data-variant="compact"></div>
   </div>
 </section>
 
