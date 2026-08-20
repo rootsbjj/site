@@ -50,6 +50,7 @@ src="https://www.facebook.com/tr?id=1573735667612795&amp;ev=PageView&amp;noscrip
 
   <div class="bkd__acts">
     <a class="btn btn--gold" id="ics" hidden>Add to calendar</a>
+    <a class="btn btn--ghost" id="gcal" target="_blank" rel="noopener" hidden>Google Calendar</a>
     <a class="btn btn--ghost" href="https://maps.google.com/?q=2/16+Dale+Street+Brookvale+NSW+2100" target="_blank" rel="noopener">Get directions</a>
     <a class="btn btn--ghost" href="tel:1300590598">Call the academy</a>
   </div>
@@ -95,6 +96,29 @@ src="https://www.facebook.com/tr?id=1573735667612795&amp;ev=PageView&amp;noscrip
     const a = document.getElementById('ics');
     a.href = r.ics;
     a.hidden = false;
+
+    /* Alternativa universal: se o .ics não pegar no aparelho da pessoa,
+       o link do Google Calendar abre no navegador em qualquer sistema.
+       Reaproveita os mesmos parâmetros já validados pelo /api/ics. */
+    try {
+      const p = new URLSearchParams(r.ics.split('?')[1]);
+      const start = new Date(p.get('iso'));
+      const toMin = t => { const m = /^(\d{1,2}):(\d{2})$/.exec(t || ''); return m ? +m[1] * 60 + +m[2] : null; };
+      const a1 = toMin(p.get('start')), b1 = toMin(p.get('end'));
+      const dur = (a1 !== null && b1 !== null && b1 > a1) ? b1 - a1 : 45;
+      const end = new Date(start.getTime() + dur * 60000);
+      const fmt = d => d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+      const g = document.getElementById('gcal');
+      g.href = 'https://calendar.google.com/calendar/render?' + new URLSearchParams({
+        action: 'TEMPLATE',
+        text: 'Free trial — ' + (p.get('label') || 'class') + ' at ROOTS BJJ',
+        dates: fmt(start) + '/' + fmt(end),
+        location: 'ROOTS BJJ Brookvale, 2/16 Dale Street, Brookvale NSW 2100',
+        details: 'Arrive 10 minutes early in comfortable clothes with a water bottle. '
+          + 'No gi needed for your first class. Questions? Call 1300 590 598.',
+      }).toString();
+      g.hidden = false;
+    } catch (_) { /* sem o Google, o .ics continua sendo a opção principal */ }
   }
 })();
 </script>

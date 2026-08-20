@@ -347,7 +347,8 @@
        iPhone ignora `download` em data URI e o botão não fazia nada.
        Só viajam dados da aula — nada do aluno vai na query string. */
     function icsHref(s) {
-      return '/api/ics?' + new URLSearchParams({
+      // a URL termina em .ics porque o iOS também decide pela extensão
+      return '/roots-trial.ics?' + new URLSearchParams({
         iso: s.iso, start: s.start, end: s.end, label: s.label,
       }).toString();
     }

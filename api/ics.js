@@ -82,8 +82,12 @@ module.exports = (req, res) => {
     'END:VCALENDAR',
   ].join('\r\n');
 
+  /* `inline`, não `attachment`: com attachment o Safari do iPhone manda o
+     arquivo para o app Arquivos em vez de abrir no Calendário. Inline faz
+     o iOS reconhecer o text/calendar e oferecer "Adicionar ao Calendário".
+     No desktop o navegador baixa do mesmo jeito, pelo tipo do conteúdo. */
   res.setHeader('Content-Type', 'text/calendar; charset=utf-8');
-  res.setHeader('Content-Disposition', 'attachment; filename="roots-trial.ics"');
+  res.setHeader('Content-Disposition', 'inline; filename="roots-trial.ics"');
   res.setHeader('Cache-Control', 'no-store');
   return res.status(200).send(ics);
 };
