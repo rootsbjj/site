@@ -64,10 +64,16 @@
             <input class="bk__in" name="phone" type="tel" placeholder="Mobile number" required autocomplete="tel" inputmode="tel">
             <input class="bk__in bk__in--wide" name="email" type="email" placeholder="Email (optional)" autocomplete="email">
           </div>
+          <input class="bk__pot" name="company" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
         </section>
 
         <div class="bk__summary" aria-live="polite"></div>
         <button type="submit" class="btn btn--gold bk__submit">Confirm my free class</button>
+        <p class="bk__fail" role="alert" hidden>
+          We couldn&rsquo;t reach the academy just now, so <b>your class isn&rsquo;t booked yet</b>.
+          Please try again, or call us on <a href="tel:1300590598">1300 590 598</a> and
+          we&rsquo;ll lock it in for you.
+        </p>
         <p class="bk__micro">Free trial &middot; no contract &middot; no payment details.</p>
       </form>
 
@@ -93,6 +99,7 @@
     const hintEl = $('.bk__hint');
     const noneEl = $('.bk__none');
     const sumEl = $('.bk__summary');
+    const failEl = $('.bk__fail');
     const ageEl = $('.bk__age input');
 
     /* ---------- dados ---------- */
@@ -266,8 +273,33 @@
       }
     });
 
+    /* ---------- envio ao backend ----------
+       Tenta 3 vezes com espera crescente. O lead é a coisa mais cara do
+       site: nunca damos "confirmado" sem que o Telegram tenha aceitado. */
+    async function sendBooking(booking) {
+      let lastErr = null;
+      for (let i = 0; i < 3; i++) {
+        try {
+          const r = await fetch('/api/book', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(booking),
+          });
+          if (r.ok) return true;
+          // 4xx é culpa do payload — repetir não ajuda
+          if (r.status >= 400 && r.status < 500) return false;
+          lastErr = new Error('http ' + r.status);
+        } catch (err) {
+          lastErr = err;
+        }
+        await new Promise(r => setTimeout(r, 400 * Math.pow(2, i)));
+      }
+      console.error('reserva não enviada:', lastErr && lastErr.message);
+      return false;
+    }
+
     /* ---------- submit ---------- */
-    form.addEventListener('submit', e => {
+    form.addEventListener('submit', async e => {
       e.preventDefault();
       if (!state.session) {
         root.querySelector('.bk__step--cal').classList.add('is-missing');
@@ -281,16 +313,31 @@
       const booking = {
         program: state.program, programName: SC.PROGRAMS[state.program].name,
         date: s.date, iso: s.iso, start: s.start, end: s.end,
-        classLabel: s.label,
+        classLabel: s.label, ages: s.ages,
         name: form.name.value.trim(),
         phone: form.phone.value.trim(),
         email: form.email.value.trim() || null,
+        company: form.company ? form.company.value : '',   // honeypot
         source: location.pathname.includes('landing') ? 'ads-landing' : 'website',
       };
 
-      // ligar aqui quando o backend existir:
-      // fetch('/api/bookings', {method:'POST', body: JSON.stringify(booking)})
-      // fbq('track','Schedule',{content_name: booking.classLabel});
+      const btn = root.querySelector('.bk__submit');
+      const btnText = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Confirming…';
+      failEl.hidden = true;
+
+      const sent = await sendBooking(booking);
+
+      btn.disabled = false;
+      btn.textContent = btnText;
+
+      if (!sent) {
+        // não mentimos para o cliente: a reserva não chegou na academia
+        failEl.hidden = false;
+        failEl.scrollIntoView({ block: 'center', behavior: 'smooth' });
+        return;
+      }
 
       root.querySelector('.bk__ticket').innerHTML = `
         <div class="bk__t-day">${new Date(s.iso).toLocaleDateString('en-AU',

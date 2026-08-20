@@ -2211,6 +2211,19 @@ body::after { display: none; }
 /* ═══ BOOKING WIDGET — calendário + aulas reais ═══════════════════ */
 .bk { max-width: 56rem; }
 .bk__step { margin-bottom: 1.9rem; }
+/* honeypot: invisível para gente, preenchível por bot */
+.bk__pot {
+  position: absolute; left: -9999px; width: 1px; height: 1px;
+  opacity: 0; pointer-events: none;
+}
+.bk__fail {
+  margin: 0.9rem 0 0; padding: 0.85rem 1rem;
+  border-left: 3px solid var(--red); background: rgba(166, 50, 58, 0.06);
+  color: var(--ink); font-size: 0.9rem; line-height: 1.5;
+}
+.bk__fail a { color: var(--red); font-weight: 600; }
+.bk__submit[disabled] { opacity: 0.6; cursor: progress; }
+
 .bk__step.is-missing .bk__cal { outline: 2px solid var(--red); outline-offset: 6px; }
 .bk__step.is-missing .bk__legend::after {
   content: 'pick a day and a class first';
