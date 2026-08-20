@@ -343,20 +343,13 @@
       location.href = 'booked.html';
     });
 
+    /* O arquivo vem de /api/ics, não de um `data:` URI: o Safari do
+       iPhone ignora `download` em data URI e o botão não fazia nada.
+       Só viajam dados da aula — nada do aluno vai na query string. */
     function icsHref(s) {
-      const z = n => String(n).padStart(2, '0');
-      const st = d => `${d.getUTCFullYear()}${z(d.getUTCMonth() + 1)}${z(d.getUTCDate())}T${z(d.getUTCHours())}${z(d.getUTCMinutes())}00Z`;
-      const start = new Date(s.iso);
-      const [eh, em] = s.end.split(':').map(Number);
-      const end = new Date(start); end.setHours(eh, em, 0, 0);
-      return 'data:text/calendar;charset=utf-8,' + encodeURIComponent([
-        'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//ROOTS BJJ//Trial//EN','BEGIN:VEVENT',
-        `UID:${start.getTime()}@rootsbjj.com.au`, `DTSTAMP:${st(new Date())}`,
-        `DTSTART:${st(start)}`, `DTEND:${st(end)}`,
-        `SUMMARY:Free trial — ${s.label} at ROOTS BJJ`,
-        'LOCATION:2/16 Dale Street, Brookvale NSW 2100',
-        'DESCRIPTION:Arrive 10 minutes early. Comfortable clothes and a water bottle.',
-        'END:VEVENT','END:VCALENDAR'].join('\r\n'));
+      return '/api/ics?' + new URLSearchParams({
+        iso: s.iso, start: s.start, end: s.end, label: s.label,
+      }).toString();
     }
 
     /* veio da timetable com programa e dia já escolhidos */
