@@ -14,9 +14,14 @@
 
 <!-- ══════════════════════════════════════════════════════════════════
      META ADS — esta URL é a meta de conversão.
-     Cole o pixel aqui e ele dispara só em quem realmente agendou.
-     Configure no Gerenciador: URL contém "/booked"
+     Só se chega aqui completando uma reserva que o servidor aceitou.
+     No Gerenciador: conversão personalizada com URL contém "/booked",
+     ou use direto o evento padrão "Schedule" disparado no fim da página.
      ══════════════════════════════════════════════════════════════════ -->
+<!-- Meta Pixel -->
+<script src="pixel.js"></script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+src="https://www.facebook.com/tr?id=1573735667612795&amp;ev=PageView&amp;noscript=1"></noscript>
 </head>
 <body class="bkd">
 
@@ -68,7 +73,17 @@
 (() => {
   let r = null;
   try { r = JSON.parse(sessionStorage.getItem('roots:receipt') || 'null'); } catch (_) {}
-  if (!r) return;   // acesso direto à página: mantém o texto genérico
+  if (!r) return;   // acesso direto à página: mantém o texto genérico e não conta conversão
+
+  /* Conversão. Só dispara com recibo real na mão — quem abre a URL
+     direto não vira lead falso no Gerenciador. Vai só o tipo de aula:
+     nome, telefone e e-mail do aluno nunca saem daqui. */
+  if (window.fbq) {
+    fbq('track', 'Schedule', {
+      content_name: r.label,
+      content_category: r.source === 'ads-landing' ? 'ads-landing' : 'website',
+    });
+  }
 
   document.getElementById('ticket').innerHTML = `
     <div class="bk__t-day">${r.day}</div>
