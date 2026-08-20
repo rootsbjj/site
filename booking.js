@@ -77,19 +77,7 @@
         <p class="bk__micro">Free trial &middot; no contract &middot; no payment details.</p>
       </form>
 
-      <div class="bk__done" hidden>
-        <p class="bk__done-kicker">Osu! You&rsquo;re booked.</p>
-        <div class="bk__ticket"></div>
-        <ol class="bk__next">
-          <li><b>We text you a confirmation</b> to the number you left.</li>
-          <li><b>Arrive 10 minutes early</b> in comfortable clothes with a water bottle.</li>
-          <li><b>Step on the mat.</b> Your coach takes it from there.</li>
-        </ol>
-        <div class="bk__done-acts">
-          <a class="btn btn--small btn--ghost bk__ics" download="roots-trial.ics">Add to calendar</a>
-          <a class="btn btn--small btn--ghost" href="tel:1300590598">Call the academy</a>
-        </div>
-      </div>`;
+      <div class="bk__done" hidden></div>`;
 
     const $ = s => root.querySelector(s);
     const form = $('.bk__form');
@@ -339,17 +327,20 @@
         return;
       }
 
-      root.querySelector('.bk__ticket').innerHTML = `
-        <div class="bk__t-day">${new Date(s.iso).toLocaleDateString('en-AU',
-          { weekday: 'long', day: 'numeric', month: 'long' })}</div>
-        <div class="bk__t-time">${s.range}</div>
-        <div class="bk__t-what">${s.label} &middot; ${s.ages}</div>
-        <div class="bk__t-where">ROOTS BJJ Brookvale &middot; 2/16 Dale Street</div>`;
-      root.querySelector('.bk__ics').href = icsHref(s);
-      form.hidden = true;
-      root.querySelector('.bk__done').hidden = false;
-      root.querySelector('.bk__done').scrollIntoView({ block: 'nearest', behavior: 'smooth' });
       document.dispatchEvent(new CustomEvent('roots:booked', { detail: booking }));
+
+      /* A confirmação vive numa URL própria (/booked.html) para servir de
+         meta de conversão no Meta Ads. Os dados vão por sessionStorage —
+         nunca na query string, que vaza nome e telefone em log e referrer. */
+      try {
+        sessionStorage.setItem('roots:receipt', JSON.stringify({
+          day: new Date(s.iso).toLocaleDateString('en-AU',
+            { weekday: 'long', day: 'numeric', month: 'long' }),
+          range: s.range, label: s.label, ages: s.ages,
+          ics: icsHref(s), source: booking.source,
+        }));
+      } catch (_) { /* modo privado bloqueia storage — segue para a página */ }
+      location.href = 'booked.html';
     });
 
     function icsHref(s) {

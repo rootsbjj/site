@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You&rsquo;re booked — ROOTS BJJ Brookvale</title>
+<meta name="description" content="Your free trial class at ROOTS BJJ Brookvale is confirmed.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Big+Shoulders+Display:wght@500;700;800&family=Pirata+One&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="assets/logo.png">
+
+<!-- ══════════════════════════════════════════════════════════════════
+     META ADS — esta URL é a meta de conversão.
+     Cole o pixel aqui e ele dispara só em quem realmente agendou.
+     Configure no Gerenciador: URL contém "/booked"
+     ══════════════════════════════════════════════════════════════════ -->
+</head>
+<body class="bkd">
+
+<header class="ld-top">
+  <a href="index.html"><img src="assets/logo-mark.png" alt="ROOTS Brazilian Jiu-Jitsu" class="ld-top__logo"></a>
+  <a href="tel:1300590598" class="ld-top__call">
+    <span class="ld-top__call-label">Questions? Call</span>
+    <strong>1300 590 598</strong>
+  </a>
+</header>
+
+<main class="bkd__wrap">
+  <p class="bkd__kicker">Osu! You&rsquo;re booked.</p>
+  <h1 class="bkd__title">See you<br><span>on the mat.</span></h1>
+
+  <div class="bkd__ticket" id="ticket">
+    <div class="bk__t-day">Your class is confirmed</div>
+    <div class="bk__t-where">ROOTS BJJ Brookvale &middot; 2/16 Dale Street</div>
+  </div>
+
+  <ol class="bkd__next">
+    <li><b>Your spot is saved.</b> Your coach already has your details &mdash; there&rsquo;s nothing else to fill in.</li>
+    <li><b>Arrive 10 minutes early</b> in comfortable clothes with a water bottle. No gi needed.</li>
+    <li><b>Step on the mat.</b> Your coach takes it from there.</li>
+  </ol>
+
+  <div class="bkd__acts">
+    <a class="btn btn--gold" id="ics" download="roots-trial.ics" hidden>Add to calendar</a>
+    <a class="btn btn--ghost" href="https://maps.google.com/?q=2/16+Dale+Street+Brookvale+NSW+2100" target="_blank" rel="noopener">Get directions</a>
+    <a class="btn btn--ghost" href="tel:1300590598">Call the academy</a>
+  </div>
+
+  <p class="bkd__note">
+    Something came up? Call <a href="tel:1300590598">1300 590 598</a> and we&rsquo;ll move you
+    to another class &mdash; no problem at all.
+  </p>
+
+  <p class="bkd__back"><a href="index.html">&larr; Back to the website</a></p>
+</main>
+
+<footer class="ld-foot">
+  <span>&copy; 2026 ROOTS Brazilian Jiu-Jitsu &middot; ABN 16 595 381 228</span>
+  <span class="footer__values">Respect &middot; Honour &middot; Loyalty &middot; Family</span>
+</footer>
+
+<script>
+/* Preenche o recibo com a aula que a pessoa marcou. Os dados vêm do
+   sessionStorage, gravado por booking.js — nada trafega na URL. */
+(() => {
+  let r = null;
+  try { r = JSON.parse(sessionStorage.getItem('roots:receipt') || 'null'); } catch (_) {}
+  if (!r) return;   // acesso direto à página: mantém o texto genérico
+
+  document.getElementById('ticket').innerHTML = `
+    <div class="bk__t-day">${r.day}</div>
+    <div class="bk__t-time">${r.range}</div>
+    <div class="bk__t-what">${r.label}${r.ages ? ' &middot; ' + r.ages : ''}</div>
+    <div class="bk__t-where">ROOTS BJJ Brookvale &middot; 2/16 Dale Street</div>`;
+
+  if (r.ics) {
+    const a = document.getElementById('ics');
+    a.href = r.ics;
+    a.hidden = false;
+  }
+})();
+</script>
+</body>
+</html>
